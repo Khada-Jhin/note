@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+        body{
+            transform: perspective(800px);
+            
+        }
+        ul {
+            
+            width: 300px;
+            height: 300px;
+            transform: rotateY(0deg) rotateX(0deg);
+            transform-style: preserve-3d;
+            list-style: none;
+            margin: 200px auto;
+            position: relative;
+            box-sizing: border-box;
+            animation-name: foo;
+            animation-direction: alternate;
+            animation-duration: 60s;
+            animation-timing-function: linear;
+            animation-iteration-count: infinite;
+            
+        }
+
+        li {
+            width: 300px;
+            height: 300px;
+            text-align: center;
+            line-height: 300px;
+            position: absolute;
+            
+        }
+        li:nth-child(1) {
+            background-color: red;
+            transform: rotateX(90deg) translateZ(150px);
+            
+            
+        }
+
+        li:nth-child(2) {
+            background-color: aqua;
+            transform: rotateX(180deg) translateZ(150px);
+            
+        }
+
+        li:nth-child(3) {
+            background-color: salmon;
+            transform: rotateX(-90deg) translateZ(150px);
+        }
+
+        li:nth-child(4) {
+            background-color: skyblue;
+            transform: translateZ(150px);
+            
+        }
+
+        li:nth-child(5) {
+            background-color: slateblue;
+            transform: translateX(-150px) rotateY(90deg);
+        }
+
+        li:nth-child(6) {
+            background-color: slategray;
+            transform: translateX(150px) rotateY(90deg);
+           
+        }
+
+        @keyframes foo {
+            0% {
+                transform: rotateY(0deg) rotateX(0deg);
+            }
+            100% {
+                transform: rotateY(720deg) rotateX(960deg);
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <ul>
+        <li>1</li>
+        <li>2</li>
+        <li>3</li>
+        <li>4</li>
+        <li>5</li>
+        <li>6</li>
+    </ul>
+</body>
+
+</html>
