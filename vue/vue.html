@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Vue</title>
+    
+</head> 
+<body>
+    <div id="app">
+        <div>{{message}}</div>
+        <button  v-on:click="foo">逆转文本</button>
+        <ul>
+            <li v-for="pro in todos">{{pro}}</li>
+        </ul>
+    </div>
+</body>
+<script src="vue2.6.7.js"></script>
+<script>
+    var app = new Vue({
+        el: '#app',
+        data: {
+            message: 'hello world',
+            title: 'show',
+            todos: ['1', '2', '3'],
+        },
+        methods: {
+            foo: function () {
+                app.$data.message = app.$data.message.split('').reverse().join('')
+            }
+        }
+    })
+</script>
+
+</html>

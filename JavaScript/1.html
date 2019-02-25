@@ -29,23 +29,61 @@
     
 </script>
 
-<script>
+<script type="x">
     debugger
     var n = Number(prompt('输入:'))
     if (isNaN(n)) {
         alert('please number')
+    } else if (n < 10) {
+        alert('小')
+    } else if (n < 100) {
+        alert('一般')
     } else {
-        if (n < 10) {
-            alert('小')
-        } else {
-            if (n < 100) {
-                alert('一般')
-            } else {
-                alert('big')
-            }
-        }
+        alert('big')
     }
 
+
+
     console.log('done');
+
+</script>
+
+<script type="x">
+    var n = 0
+    while (n < 12) {
+        console.log(n);
+        n = n + 2
+    }
+</script>
+
+<script type='x'>
+    var n = parseInt(Math.random()*100)
+    var x = Number(prompt('请输入:'))
+
+    while (x !== n) {
+        if (x > n) {
+            alert('大了')
+        } else {
+            alert('小了')
+        }
+
+        x = Number(prompt('请输入:'))
+    }
+    if (x === n) {
+        alert('对了')
+    }
+    
+</script>
+
+<script>
+	debugger;
+	var x
+	var n = 0
+	for (var i = 0; i < 10; i++) {
+		x = +prompt('请输入:')
+
+		n = n + x
+	}
+	console.log(n);
 
 </script>

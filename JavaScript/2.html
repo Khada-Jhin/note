@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>画图</title>
+    <style>
+        canvas {
+            border: 2px solid #f0f;
+            display: block;
+            margin: auto;
+        }
+    </style>
+</head>
+
+<body>
+    <canvas width="400" height="300"></canvas>
+</body>
+<script>
+    var cvs = document.querySelector('canvas')
+    var ctx = cvs.getContext('2d')
+
+    function dot(x, y, color = 'black') {
+        ctx.fillStyle = color
+        ctx.fillRect(x, y, 1, 1)
+    }
+
+    for (var x = 0; x < 400; x++) {
+        dot(x, 20, 'red')
+    }
+
+    for (var x = 0; x < 400; x += 2) {
+        dot(x, 40, 'pink')
+    }
+
+    for (var x = 0; x < 400; x++) {
+        if (x % 5 < 3) {
+            dot(x, 60, 'red')
+        }
+    }
+    
+    for (var x = 0; x < 400; x++) {
+        var a = x % 15
+        if (a < 3) {
+            dot(x, 60)
+        }else if (a< 10) {
+            dot(x,60,'red')
+        }
+    }
+
+    for (var x = 0; x < 300; x++) {
+        dot(x,x)
+    }
+
+    for (var x = 0; x < 400; x++) {
+        var y = 0.75 * x
+        dot(x,y)     
+    }
+    
+    for (var x = 0; x < 400; x+=0.1) {
+        var y =parseInt(x)  
+        
+        
+        dot(x * 5,y * 5)
+    }
+
+    for (var y = 150; y < 250; y++) {
+        for (var x = 50; x < 150; x++) {
+            dot(x,y,'hsl(' + (x+y) + ',100%, 70%)')
+        }
+    }
+
+    
+
+</script>
