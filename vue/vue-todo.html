@@ -1,13 +1,74 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Document</title>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<meta http-equiv="X-UA-Compatible" content="ie=edge">
+	<title>Document</title>
 </head>
+
 <body>
-    
+	<div id="app">
+		<div>
+			<input type="checkbox" @click="toggleSelecAll" :checked="todos.every(it => it.done)">
+			<!--@是v-on的缩写-->
+			<input type="text" @keydown="addTodo" v-model.trim="todoText">
+		</div>
+		<ul>
+			<li v-for='(todo, index) in todos'>
+				<input type="checkbox" v-model="todo.done">{{todo.content}}
+				<span v-on:click="delTodo(index)">&times;</span>
+			</li>
+		</ul>
+		<div>
+		<span>{{todos.filter(it=>!it.done).length}} item{{todos.filter(it=>!it.done).length > 1 ? 's' : ''}} left</span>
+		</div>
+	</div>
+
 </body>
 <script src="vue2.6.7.js"></script>
+<script>
+	var app = new Vue({
+		el: '#app',
+		data: {
+			todoText: '',
+			todos: [{
+				content: 'eat',
+				done: false
+			}, {
+				content: 'drink',
+				done: true
+			}],
+		},
+		methods: {
+
+			delTodo: function (index) {
+				this.todos.splice(index, 1)
+			},
+			addTodo: function (e) {
+				if (!this.todoText) {
+					return
+				}
+				if (e.keyCode === 13) {
+					this.todos.push({
+						content: this.todoText,
+						done: false,
+					})
+				}
+				this.todoText = ""
+
+			},
+			toggleSelecAll: function () {
+				if (this.todos.every(it => it.done)) {
+					this.todos.forEach(it => it.done = false)
+				} else {
+					this.todos.forEach(it => it.done = true)
+				}
+			},
+
+		},
+	})
+</script>
+
 </html>

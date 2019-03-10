@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <div id="app">
+        
+        <button-content :start='5'></button-content>
+        <button-content></button-content>
+        <button-content></button-content>
+        <button-content></button-content>
+        <button-content></button-content>
+    </div>
+</body>
+<script src="vue2.6.7.js"></script>
+<script>
+    Vue.component('button-content',{
+         props: ['start'],
+        template: `<div>
+            <button @click='dec'>-</button>
+            <span>{{count}}</span>
+            <button @click='inc'>+</button>
+        </div>`,
+        data() {
+            return{
+                count: this.start || 0
+            }
+        },
+        methods: {
+            inc() {
+                this.count++
+            },
+            dec() {
+                this.count--
+            }
+        },
+        
+        
+    })
+
+    var app = new Vue({
+        el: '#app',
+        data: {
+            msg: 1
+        }
+    })
+</script>
+</html>

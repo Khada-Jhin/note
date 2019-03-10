@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <div id="app">
+        <date v-model='birthday'></date>
+        
+    </div>
+</body>
+<script src="vue2.6.7.js"></script>
+<script>
+    Vue.component('date',{
+        props: ['value'],
+        template: `<input type='text' v-model= 'dateText' />`,
+        data() {
+            return {
+                dateText: this.value.toLocaleDateString()
+            }
+        },
+        watch: {
+            dateText: function (newVal) {
+                this.$emit('input', new Date(newVal))
+            },
+            value: function (newVal) {
+                this.dateText = newVal.toLocaleDateString()
+            }
+        }
+    })
+    var app = new Vue({
+        el: '#app',
+        data: {
+            birthday: new Date(),
+        },
+        mounted() {
+
+        },
+        methods: {
+
+        },
+    })
+</script>
+</html>

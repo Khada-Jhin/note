@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<meta http-equiv="X-UA-Compatible" content="ie=edge">
+	<title>Document</title>
+</head>
+
+<body>
+	<div id="app">
+		<player @volimechange='vc' @pause @resume src='xxx.mp4' :initvolume='65' :autoplay='false'>
+
+		</player>
+
+		<slider :interval='3000' :sliders='["a.jpg","b.jpg", "c.jpg"]' :indicators='true/false' :buttons='true/false' @prev
+			@next>
+
+
+		</slider>
+	</div>
+
+</body>
+<script src='vue2.6.7.js'></script>
+<script>
+	Vue.component('player', {
+		props: ['src', 'initvolume', 'autoplay'],
+		template: `
+            <section style='border: 2px solid;width:300px;height:200px'>
+            <div style='height:150px; border-bottom:2px solid'>{{isPlaying ? '正在播放: ' + src : src + '以暂停'}}</div>
+            <button v-show='!isPlaying' @click='play()'> > </button>
+            <button v-show='isPlaying' @click='pause()'> || </button>
+            <input type='range' v-model='currentVolume' max='100' min='0'/>
+            </section>    
+        `,
+		data() {
+			return {
+				isPlaying: this.autoplay,
+				currentVolume: this.initvolume
+			}
+		},
+		watch: {
+			currentVolume: function (newVal) {
+				this.$emit('volimechange', newVal)
+			}
+		},
+		methods: {
+			play() {
+				this.isPlaying = true
+				this.$emit('resume')
+			},
+			pause() {
+				this.isPlaying = false
+				this.$emit('pause')
+
+			},
+		}
+	})
+
+	Vue.component('slider', {
+		props: ['interval', 'sliders', 'indicators', 'buttons'],
+		template: `
+        <section>
+          	<div>
+            	<ul>
+             		<li v-show='index == currIndex' v-for='(img, index) in sliders'>{{img}}</li>
+				</ul>
+			</div>
+			<ul v-show='indicators'>
+				<li @click='currIndex = i - 1' v-for='i of sliders.length'>{{i}}{{i - 1 === currIndex ? '*' : ''}}</li>
+			</ul>
+			<button v-show='buttons' @click='prve'>prev</button>
+			<button v-show='buttons' @click='next'>Next</button>
+		</section>			 
+        `,
+		data() {
+			return {
+				currIndex: 0
+			}
+		},
+		mounted() {
+			setInterval = setInterval(() => {
+				this.next()
+			}, this.interval);
+		},
+		destoryed() {
+			clearInterval(this.intervalId)
+		},
+		methods: {
+			prve() {
+				this.currIndex = (this.sliders.length + this.currIndex - 1) % this.sliders.length
+				this.$emit('prve', this.currIndex)
+			},
+			next() {
+				this.currIndex = (this.currIndex + 1) % this.sliders.length
+				this.$emit('next', this.currIndex)
+
+			}
+		}
+	})
+	var app = new Vue({
+		el: '#app',
+		data: {
+
+		},
+		methods: {
+			vc(volume) {
+				console.log('current', volume);
+			}
+		}
+	}) 
+</script>
+
+</html>
