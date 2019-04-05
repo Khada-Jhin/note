@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+
+<body>
+    <div id="app"></div>
+</body>
+
+<script src="vue-2.6.9.js"></script>
+<script src="vuex-3.1.0.js"></script>
+<script>
+    
+
+    const store = new Vuex.Store({
+        state: {
+            count: 0,
+            firstName: 'shaosheng',
+            lastName: 'shaohaozhen'
+        },
+        mutations: {
+            increment(state) {
+                state.count++
+                state.firstName = 'shaohaozhen'
+                state.lastName = 'shaosheng'
+            }
+        },
+
+
+    })
+
+    const Counter = {
+        template: `<div>{{count}},{{firstName}},{{lastName}}</div>`,
+        computed: {
+
+            ...Vuex.mapState(['count', 'firstName', 'lastName'])
+        }
+    }
+
+    const app = new Vue({
+        el: '#app',
+        store: store,
+        components: { Counter },
+        template: `
+            <div class="app">
+                <counter></counter>
+            </div>    
+        `
+    })
+</script>
+
+</html>

@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+
+<body>
+
+</body>
+<script>
+    function foo() {
+        var obj = {
+            id: i,
+            生命: 45,
+        }
+        obj.__proto__ = foo.xxx
+        return obj
+    }
+    foo.xxx = {
+        bar: function () { },
+        baz: function () { },
+    }
+    var baf = []
+
+    for (var i = 0; i < 100; i++) {
+        Array.prototype.push.call(baf, foo.call())
+    }
+
+
+    // new
+
+    function Soldier() {
+        // this = {}
+        // this.__proto__ = Soldier.prototyp
+
+        this.id = i
+        this.live = 45
+        //return this
+    }
+    createSoldier.prototype.loo = 'zz'
+    createSoldier.prototype.lol = 'zzz'
+    createSoldier.prototype.lll = 'zzzz'
+
+    var soldiers = []
+
+    for (var i = 0; i < 100; i++) {
+        soldiers.push(new Soldier)
+    }
+    console.log(soldiers);
+
+
+    //继承
+
+    function Human(option) {
+        this.name = option.name
+        this.fuse = option.fuse
+    }
+    Human.prototype.eat = function () {
+
+    }
+    Human.prototype.drink = function () {
+
+    }
+    Human.prototype.poo = function () {
+
+    }
+
+    function Soldier(option) {
+        Human.call(this, option)  //这行代码让Soldier继承Human的特有属性,也就是name和fuse.
+        this.id = option.id
+        this.shengming = 45
+    }
+
+    //Soldier.prototype = {constructor: Soldier}
+    // function fakeHuman() {
+
+    // }
+    // fakeHuman.prototype = Human.prototype
+    // Soldier.prototype = new fakeHuman()
+    //以上三行代码产生的作用只是让Soldier.prototype.__proto__ = Human.prototype,兼容IE
+
+    Soldier.prototype = Object.create(Human.prototype)
+    //这行可以替代上面注释掉的三行代码,但不兼容IE
+
+    Soldier.prototype.runing = function () {
+
+    }
+    Soldier.prototype.die = function () {
+
+    }
+    Soldier.prototype.attack = function () {
+
+    }
+    Soldier.prototype.defense = function () {
+
+    }
+    // Soldier.prototype.__proto__ = Human.prototype //这行代码让Soldier继承下Human的共有属性,但是这行代码使用到了proto,生产环境下不允许使用,所以无效
+
+    var s = new Soldier({ name: 'zhansan', fuse: 'yellow', id: 1, })
+
+
+    //class用法
+    class Human {
+        constructor(options) {
+            this.name = options.name
+            this.fuse = options.fuse
+            //这些是特有属性,放在constructor里
+        }
+        //外面放共有属性,而且必须是函数
+        eat() { }
+        drink() { }
+        poon() { }
+    }
+
+    class Soldier extends Human {
+        constructor(options) {
+            super(options)
+            this.id = options.id
+            this.shengming = options.shengming
+            this.bingzhong = '美国大兵'
+
+
+        }
+        attack = 5
+        run() { }
+        die() { }
+        foo() { }
+        bar() { }
+    }
+
+    var s = new Soldier({ name: 'zhangsan', fuse: 'yellow', id: 1 })
+
+
+
+    // 题
+
+
+    function Animal() {}
+    Animal.prototype.行动 = function () { }
+    function Human() {
+        Animal.call(this)
+        this.name = 'Frank'
+        this.birthday = '2000-10-10'
+    }
+    Human.prototype = Object.create(Animal.prototype);
+    Human.prototype.物种 = function () { }
+    Human.prototype.使用工具 = function () { }
+    function Asian() {
+        Human.call(this)
+        this.city = '北京'
+        this.name = 'Frank'
+        this.birthday = '2000-10-10'
+    }
+    Asian.prototype = Object.create(Human.prototype)
+    Asian.prototype.肤色 = function () {
+
+    }
+
+
+
+
+
+
+    
+
+
+</script>
+
+</html>

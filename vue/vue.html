@@ -1,36 +1,71 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Vue</title>
-    
-</head> 
+
+</head>
+<style>
+    .active {
+        background-color: red;
+    }
+</style>
+
 <body>
     <div id="app">
-        <div>{{message}}</div>
-        <button  v-on:click="foo">逆转文本</button>
-        <ul>
-            <li v-for="pro in todos">{{pro}}</li>
-        </ul>
+
     </div>
 </body>
-<script src="vue2.6.7.js"></script>
+<script src="vue-2.6.9.js"></script>
 <script>
     var app = new Vue({
         el: '#app',
         data: {
-            message: 'hello world',
-            title: 'show',
-            todos: ['1', '2', '3'],
+            selectedTab: 1
         },
-        methods: {
-            foo: function () {
-                app.$data.message = app.$data.message.split('').reverse().join('')
-            }
-        }
+        template: `
+        <div>
+            <tabs selectedTab="tab1">
+                <tabs-navs>
+                    <tabs-navs-item name="tab1">tab 1</tabs-navs-item>  
+                    <tabs-navs-item name="tab2">tab 2</tabs-navs-item>
+                </tab-navs>
+                <tabs-panes>    
+                    <tabs-panes-item name="tab1">内容1</tabs-panes-item>
+                    <tabs-panes-item name="tab2">内容1</tabs-panes-item>
+                </tabs-panes>    
+            </tabs>    
+        </div>
+        `
+    })
+
+    vue.component('tabs',{
+        props: ['selecteTab']
+    })
+    vue.component('tabs-navs',{})
+    vue.component('tabs-navs-item',{
+        props:['name']
+    })
+    vue.component('tabs-panes',{})
+    vue.component('tabs-panes-item',{
+        props:['name']
     })
 </script>
 
 </html>
+
+<div>
+    <div class="tabs">
+        <ol class="navs">
+            <li :class="{active: selectedTab === 1}" @click="selectedTab = 1">1</li>
+            <li :class="{active: selectedTab === 2}" @click="selectedTab = 2">2</li>
+        </ol>
+        <ol class="panes">
+            <li v-show="selectedTab === 1">content 1</li>
+            <li v-show="selectedTab === 2">content 2</li>
+        </ol>
+    </div>
+</div>
