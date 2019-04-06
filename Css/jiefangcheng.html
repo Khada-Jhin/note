@@ -1,0 +1,44 @@
+
+<script type="xxx">
+    var a = +prompt('placse enter your number a:')
+    var b = +prompt('placse enter your number b:') 
+    var c = +prompt('placse enter your number c:')
+
+    var delta = b * b - 4 * a * c
+    var s_delta = Math.sqrt(delta)
+    
+    
+    if (delta > 0) {
+        var x1 = (-b + s_delta) / (2 * a);
+        console.log(x1);
+        var x2 = (-b - s_delta) / (2 * a);
+        console.log(x2);
+    }   else if (delta == 0) {
+        var x = (-(b / (2 * a)));
+        console.log(x);     
+    }   else if (delta < 0) {
+        var x3 = (-(b / (2 * a))) + '+' + (Math.sqrt(4 * a * c - b * b ) / (2 * a)) + 'i'
+        console.log(x3);
+        var x4 = (-(b / (2 * a))) + '-' + (Math.sqrt(4 * a * c - b * b ) / (2 * a)) + 'i'
+        console.log(x4);
+    }  
+</script>
+<script>
+    var a = +prompt('placse enter your number a:')
+    var b = +prompt('placse enter your number b:')
+    var c = +prompt('placse enter your number c:')
+    var d = +prompt('placse enter your number d:')
+    var e = +prompt('placse enter your number e:')
+    var f = +prompt('placse enter your number f:')
+    
+    if (a / d != b / e) {
+        var x = (c * e - b * f) / (a * e - b * d)
+        var y = (d * c - a * f) / (d * b - a * e)
+        console.log(x)
+        console.log(y)
+    }   else if (a / d == b / e == c / f) {
+        console.log('此方程组有无数解');
+    }   else if (a / d == b / e != c / f){
+        console.log('此方程组无解');
+    }
+</script>
