@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>居中</title>
+    <style>
+        *{
+            background-color: rgba(0,0,0,0.1);
+        }
+
+        .s1{
+            line-height: 100vh;
+            text-align: center;
+        }
+        .s1 div{
+            text-align: center;
+            line-height: 100px;
+            width: 150px;
+            display: inline-block;
+            vertical-align: middle;
+        }
+        
+
+
+
+
+        .s2{
+            display: table-cell;
+            width: 200px;
+            height: 150px;
+            vertical-align: middle;
+        }
+        .s2 div{
+            line-height: 50px;
+            text-align: center;
+            width: 100px;
+            height: 50px;
+            margin: auto;
+        }
+
+
+
+
+
+        .s3{
+            position: relative;
+            width: 500px;
+            height: 400px;
+
+        }
+        .s3 div{
+            position: absolute;
+            width: 100px;
+            height: 100px;
+            left: 0;
+            top: 0;
+            right: 0;
+            bottom: 0;
+            margin: auto;
+
+            /*第二种
+            margin: -50px 0 0 -50px;
+            top: 50%;
+            left: 50%;*/
+
+        }
+        .s4{
+            width: 200px;
+            height: 200px;
+            position: relative;
+        }
+        .s4 div{
+            width: 100px;  
+            height: 100px;
+            position: absolute;
+            /* top: 50%;
+            left: 50%; */
+            right: 50%;
+            bottom: 50%;
+            transform: translate(50%,50%);
+        }
+        .s5{
+            width: 500px;
+            height: 500px;
+            display: flex;
+            
+        }
+        .s5 div{
+            width: 200px;
+            height: 200px;
+            margin: auto;
+        }
+    </style>
+</head>
+<body>
+<section class="s1">
+    <div>
+        foo
+    </div>
+</section>
+<hr>
+<hr>
+<hr>
+<hr>
+<hr>
+<hr>
+<hr>
+<hr>
+<hr>
+<hr>
+<section class="s2">
+    <div>
+        foo
+    </div>
+</section>
+<hr>
+<hr>
+<hr>
+<hr>
+<hr>
+<section class="s3">
+    <div>
+        foo
+    </div>
+</section>
+<hr>
+<hr>
+<hr>
+<hr>
+<hr>
+<div class="s4">
+    <div>foo</div>
+</div>
+<hr>
+<hr>
+<hr>
+<hr>
+<hr>
+<hr>
+<div class="s5">
+    <div>foo</div>
+</div>
+</body>
+</html>
