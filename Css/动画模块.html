@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>动画模块</title>
+    <style>
+        div{
+            width: 100px;
+            height: 100px;
+            background: red;
+            /*transition-property: margin-left;*/
+            /*transition: 1s;*/
+            /*1.告诉系统你需要执行哪个动画*/
+            animation-name: foo;
+            /*3.告诉系统动画持续时长*/
+            animation-duration: 2s;
+        }
+        /*2.告诉系统我们需要创建一个名称叫做 foo 的动画*/
+        @keyframes foo {
+            from{
+                margin-left: 0;
+
+            }
+            to{
+                margin-left: 500px;
+
+            }
+        }
+        /*div:hover{*/
+            /*margin-left: 500px;*/
+        /*}*/
+    </style>
+</head>
+<body>
+<div></div>
+
+</body>
+</html>

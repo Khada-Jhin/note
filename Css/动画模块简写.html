@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>动画模块简写</title>
+    <style>
+        div{
+            margin: 100px auto;
+            width: 200px;
+            height: 40px;
+            background: red;
+            /*
+            简写animation:动画名称animation-name:动画时长animation-duration:动画速度animation-timing-function:动画延迟时长animation-delay: 动画执行次数animation-iteration-count:是否需要往返animation-direction:
+            */
+            animation: foo 10s linear infinite normal;
+        }
+        @keyframes foo {
+            0%{
+                margin-left: 0;
+                margin-top: 0;
+            }
+            25%{
+                margin-left: 500px;
+                margin-top: 0;
+            }
+            50%{
+                margin-left: 500px;
+                margin-top: 500px;
+            }
+            75%{
+                margin-left: 0;
+                margin-top: 500px;
+            }
+            100%{
+                margin-left: 0;
+                margin-top: 0;
+            }
+        }
+    </style>
+</head>
+<body>
+<div></div>
+</body>
+</html>

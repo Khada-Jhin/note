@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>动画模块其他属性</title>
+    <style>
+        div{
+            width: 100px;
+            height: 100px;
+            background: red;
+            animation-name: foo;
+            animation-duration: 2s;
+            /*延迟多久后开始动画*/
+            animation-delay: 2s;
+            /*同过渡模块一样告诉系统执行动画的速度*/
+            animation-timing-function: linear;
+            /*动画播放次数 无限次的值为infinite;*/
+            animation-iteration-count: 5;
+            /*动画是否在下一周期逆向播放*/
+            animation-direction: alternate;
+            /*规定动画是否运动*/
+            animation-play-state: running;
+        }
+        @keyframes foo {
+            from {
+                margin-left: 0;
+            }
+            to{
+                margin-left: 500px;
+            }
+        }
+        div:hover{
+            animation-play-state: paused;
+        }
+    </style>
+</head>
+<body>
+<div></div>
+</body>
+</html>
