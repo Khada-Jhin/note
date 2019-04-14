@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>形变中心点</title>
+    <style>
+        *{
+            padding: 0;
+            margin: 0;
+        }
+        ul{
+            width: 200px;
+            height: 200px;
+            border: 1px solid #000;
+            margin: 100px auto;
+            position: relative;
+        }
+        ul li{
+            list-style: none;
+            width: 200px;
+            height: 200px;
+            position: absolute;
+            /*transform-origin:改变形变的中心点位置,
+              取值可以使用px,也可以使用%,还有特殊关键字,(left,top...)*/
+            /*transform-origin: 0px 0px;*/
+            transform-origin: 50% 50%;
+        }
+        ul li:nth-child(1){
+            background-color: red;
+            transform: rotate(30deg);
+         }
+        ul li:nth-child(2){
+            background-color: yellow;
+            transform: rotate(50deg);
+        }
+        ul li:nth-child(3){
+            background-color: skyblue;
+            transform: rotate(70deg);
+        }
+    </style>
+</head>
+<body>
+<ul>
+    <li></li>
+    <li></li>
+    <li></li>
+</ul>
+</body>
+</html>

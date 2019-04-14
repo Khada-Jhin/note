@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>2D模块旋转轴向</title>
+    <style>
+        *{
+            padding: 0;
+            margin: 0;
+
+        }
+        ul{
+            width: 800px;
+            height: 1100px;
+            list-style: none;
+            margin: 0 auto;
+
+        }
+        li{
+            width: 300px;
+            height: 300px;
+            margin: 0 auto;
+            margin-top: 70px;
+            /*border: 1px solid #000;*/
+            /*
+            这个属性称为透视属性,但不能透视,
+            效果其实是近大远小.
+            必须是设置在父元素上
+            */
+            perspective: 500px;
+
+        }
+        ul li img{
+            width: 300px;
+            height: 300px;
+        }
+        ul li:nth-child(1){
+            transform: rotateZ(45deg);
+        }
+        ul li:nth-child(2){
+            transform: rotateX(45deg);
+
+        }
+        ul li:nth-child(3){
+            transform: rotateY(45deg);
+        }
+    </style>
+</head>
+<body>
+<ul>
+    <li><img src="image/123.jpg" ></li>
+    <li><img src="image/1234.jpg" ></li>
+    <li><img src="image/12345.jpg" ></li>
+</ul>
+</body>
+</html>

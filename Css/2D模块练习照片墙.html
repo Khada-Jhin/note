@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>2D模块练习照片墙</title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+        }
+        div ul{
+            width: 100%;
+            height: 500px;
+            margin: 200px auto;
+            border: 1px solid #000;
+            background-color: skyblue;
+            list-style: none;
+            text-align: center;
+        }
+        div ul li{
+            width: 200px;
+            height: 200px;
+            margin: 100px auto;
+            display: inline-block;
+            transition: 1s;
+
+            position: relative;
+            box-shadow: 0 0 10px;
+
+
+        }
+        div ul li img{
+            width: 200px;
+            height: 200px;
+            border: 4px solid white;
+            box-sizing: border-box;
+        }
+        div ul li:nth-child(1){
+            transform: rotate(40deg);
+        }
+        div ul li:nth-child(2){
+            transform: rotate(-40deg);
+        }
+        div ul li:nth-child(3){
+            transform: rotate(60deg);
+        }
+        div ul li:nth-child(4){
+            transform: rotate(70deg);
+        }
+        div ul li:hover{
+            /*transform: none;*/
+            transform: scale(1.5);
+            z-index: 1;
+            box-shadow: 5px 5px 10px;
+        }
+    </style>
+</head>
+<body>
+<div>
+    <ul>
+        <li><img src="image/123.jpg"></li>
+        <li><img src="image/1234.jpg"></li>
+        <li><img src="image/12345.jpg"></li>
+        <li><img src="image/123456.jpg"></li>
+    </ul>
+</div>
+</body>
+</html>

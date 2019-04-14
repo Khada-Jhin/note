@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>2D转换模块</title>
+    <style>
+        *{
+            padding: 0;
+            margin: 0;
+        }
+        ul{
+            width: 800px;
+            height: 500px;
+            border: 1px solid #000;
+            margin: 0 auto;
+        }
+        ul li{
+            list-style: none;
+            width: 100px;
+            height: 50px;
+            background: red;
+            margin: 0 auto;
+            margin-top: 50px;
+            text-align: center;
+            line-height: 50px;
+        }
+        ul li:nth-child(2){
+            /*
+            rotate规则是旋转
+            deg是单位
+            45deg代表旋转45°
+            rotate可以围绕Z轴X轴Y轴旋转
+            写法分别是:
+            rotateZ
+            rotateX
+            rotateY
+            */
+            transform: rotate(45deg);
+        }
+        ul li:nth-child(3){
+            /*translate规则是平移
+              第一个参数是水平方向
+              第二个参数是垂直方向*/
+            transform: translate(50px,0px);
+        }
+        ul li:nth-child(4){
+            /*scale规则是缩放
+              第一个参数是水平方向
+              第二个参数是垂直方向
+              大于1为放大,小于1为缩小
+              如果2个数值一样,则可以简写成一个数值
+            */
+            transform: scale(2,2);
+        }
+        ul li:nth-child(5){
+            transform: rotate(45deg) translate(100px);
+        }
+    </style>
+</head>
+<body>
+<ul>
+    <li>正常的</li>
+    <li>旋转的</li>
+    <li>平移的</li>
+    <li>缩放的</li>
+    <li>综合的</li>
+</ul>
+</body>
+</html>
