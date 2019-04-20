@@ -210,5 +210,24 @@ Promise.race([Async(), Async2(), Async3()]).then(function(results) {
 
 // all方法的效果实际上是「谁跑的慢，以谁为准执行回调」，那么相对的就有另一个方法「谁跑的快，以谁为准执行回调」，这就是race方法
 
-
-
+var pro = function() {
+  return new Promise(function(resolve, reject) {
+    setTimeout(() => {
+      var n = Math.random() * 10;
+      if (n < 5) {
+        console.log("成功");
+        resolve("成功执行");
+      } else {
+        console.log("失败");
+        reject("执行失败");
+      }
+    },1000);
+  });
+};
+pro().then(function (data) {
+  console.log(data);
+  
+}).catch(function (res) {
+  console.log(res);
+  
+})

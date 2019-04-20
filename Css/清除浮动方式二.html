@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>清除浮动方式二</title>
+    <style>
+        *{
+            padding: 0;
+            margin: 0;
+        }
+        .box1{
+            background-color: red;
+            clear: right;
+        }
+        .box2{
+            background-color: greenyellow;
+
+        }
+        .box1 p{
+            width: 100px;
+            background-color: blue;
+            
+        }
+        .box2 p{
+            width: 100px;
+            background-color: green;
+        }
+        p{
+            float: left;
+        }
+    </style>
+</head>
+<body>
+<!--给box2设置clear:left; 但是这种设置会到这box2的margin属性失效-->
+<div class="box1">
+    <p>我是文字1</p>
+    <p>我是文字1</p>
+    <p>我是文字1</p>
+</div>
+
+<div class="box2">
+    <p>我是文字2</p>
+    <p>我是文字2</p>
+    <p>我是文字2</p>
+</div>
+
+</body>
+</html>

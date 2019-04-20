@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>清除浮动方式四</title>
+    <style>
+        *{
+            padding: 0;
+            margin: 0;
+        }
+        .box1{
+            background-color: red;
+        }
+        .box2{
+            background-color: greenyellow;
+        }
+        .box1 p{
+            width: 100px;
+            background-color: blue;
+        }
+        .box2 p{
+            width: 100px;
+            background-color: green;
+        }
+        p{
+            float: left;
+        }
+        .box1::after{
+            content: "";
+            height: 0;
+            display: block;
+            visibility: hidden;
+            clear: both;
+            *zoom: 1;
+        }
+
+        /*.box1{*/
+            /*!*兼容IE6*!*/
+            /**zoom: 1;*/
+        /*}*/
+    </style>
+</head>
+<body>
+<div class="box1">
+    <p>我是文字1</p>
+    <p>我是文字1</p>
+    <p>我是文字1</p>
+</div>
+
+<div class="box2">
+    <p>我是文字2</p>
+    <p>我是文字2</p>
+    <p>我是文字2</p>
+</div>
+</body>
+</html>

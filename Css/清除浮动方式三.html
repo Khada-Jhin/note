@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>清除浮动方式三</title>
+    <style>
+        *{
+            padding: 0;
+            margin: 0;
+        }
+        .box1{
+            background-color: red;
+        }
+        .box2{
+            background-color: greenyellow;
+
+        }
+        .box1 p{
+            width: 100px;
+            background-color: blue;
+
+        }
+        .box2 p{
+            width: 100px;
+            background-color: green;
+        }
+        p{
+            float: left;
+        }
+        .ig{
+
+            clear: both;
+        }
+        .ig1{
+            height: 20px;
+            background: skyblue;
+        }
+    </style>
+</head>
+<body>
+<!--
+隔墙法:
+1.外墙法: 在2个浮动元素之间设置一个块元素,然后给这个块元素设置浮动属性为both.
+如果需要设置2个浮动元素之间的外边距,则可以直接设置添加的块元素的高度来实现.
+外墙法不可以撑起第一个盒子的高度.
+2.内墙法:在第一个浮动元素中所有的子元素后设置一个块元素,然后给这个块元素设置浮动属性为both.外墙法可以撑起第一个盒子的高度.
+
+-->
+<div class="box1">
+    <p>我是文字1</p>
+    <p>我是文字1</p>
+    <p>我是文字1</p>
+    <div class="ig"></div>
+</div>
+
+<!--<div class="ig ig1"></div>-->
+
+<div class="box2">
+    <p>我是文字2</p>
+    <p>我是文字2</p>
+    <p>我是文字2</p>
+</div>
+
+</body>
+</html>
