@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>CSS优先级</title>
+    <style>
+
+        .ss123{
+            color: tan;
+        }
+        #ss321{
+            color: red;
+        }
+        ul{
+            color: #000;
+        }
+
+    </style>
+    <!--优先级判断的三种方式:
+    1.是否是直接选中.
+    2.是否是相同的选择器.
+    3.按照选择器优先级:
+    id>class>通配符>继承>浏览器默认-->
+
+</head>
+<body>
+<ul>
+    <li>
+        <p id="ss321" class="ss123">我是段落</p>
+    </li>
+</ul>
+
+</body>
+</html>

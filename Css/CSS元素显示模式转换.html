@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>CSS元素显示模式转换</title>
+    <style>
+        div{
+            display: inline;
+        }
+        span{
+            display: block;
+        }
+        .cc{
+            display: inline-block;
+            background-color: #ff0000;
+            width: 200px;
+            height: 200px;
+        }
+    </style>
+    <!--
+    1.display: inline转换为行内标签
+    2.display: block转换了块级标签
+    3.display: inline-block 转换为行内块级标签-->
+</head>
+<body>
+    <div>我是div</div>
+    <div>我是div</div>
+    <span>我是span</span>
+    <span>我是span</span>
+    <p class="cc">我是段落</p>
+    <b class="cc">我是加粗</b>
+</body>
+</html>

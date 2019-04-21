@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>CSS盒子模型</title>
+    <style>
+        span,a,b,strong{
+            display: inline-block;
+            width: 100px;
+            height: 100px;
+            border: 6px solid #000;
+            padding: 20px;
+            margin: 20px;
+        }
+    </style>
+    <!--
+    1.内容的宽度和高度:
+    就是标签的宽度和高度.
+    2.元素的宽度和高度:
+    宽度:
+    左边框+左内边距+width+右内边距+右边框
+    高度同理
+    3.元素的空间宽度和高度:
+    宽度:
+    左外边距+左边框+左内边距+width+右内边距+右边框+右外边距
+    高度同理
+    -->
+</head>
+<body>
+<span>我是span</span>
+<a href="#">我是超链接</a>
+<b>我是加粗</b>
+<strong>我是强调</strong>
+
+</body>
+</html>

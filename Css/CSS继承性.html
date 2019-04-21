@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>CSS继承性</title>
+    <style>
+        div{
+            color: red;
+            font-size: 30px;
+
+        }
+    </style>
+    <!--只有以color/font-/text-/line/开头的属性才能继承.
+        a标签的文字颜色和下划线是不能继承的.
+        h标签的文字大小是不能继承的.
+        应用场景:
+        设置共性文字大小,颜色 等等
+        例:
+        body{
+            }
+        -->
+</head>
+<body>
+    <div>
+        <p>我是段落</p>
+    </div>
+    <div>
+        <ul>
+            <li>
+                <p>我是段落</p>
+            </li>
+        </ul>
+    </div>
+    <div>
+        <a href="#">我是超链接</a>
+    </div>
+    <div>
+        <h1>我是标题</h1>
+    </div>
+</body>
+</html>
