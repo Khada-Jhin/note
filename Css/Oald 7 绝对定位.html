@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Oald 7绝对定位</title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+        }
+        section{
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+
+        }
+        .box1{
+            position: absolute;
+            width: 200px;
+            height: 100%;
+            background-color: red;
+        }
+        .box2{
+            background-color: seagreen;
+            position: absolute;
+            top: 0;
+            left: 200px;
+            right: 400px;
+            height: 72px;
+        }
+        .box3{
+            background-color: skyblue;
+            position: absolute;
+            left: 200px;
+            top: 72px;
+            bottom: 0;
+            right: 400px;
+        }
+        .box4{
+            position: absolute;
+            height: 100%;
+            background-color: green;
+            min-width: 200px;
+            right: 200px;
+
+        }
+        .box5{
+            position: absolute;
+            height: 100%;
+            background-color: gold;
+            right: 0;
+            min-width: 200px;
+
+        }
+        .right{
+            position: absolute;
+            right: 0;
+
+        }
+    </style>
+</head>
+<body>
+<section>
+<div class="box1"></div>
+<div class="box2"></div>
+<div class="box3"></div>
+<div class="box4"></div>
+<div class="box5"></div>
+</section>
+
+</body>
+</html>
