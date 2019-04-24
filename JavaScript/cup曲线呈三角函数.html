@@ -1,0 +1,12 @@
+<script>
+    setInterval(function () {
+        var time = (Math.sin(Date.now() / 5000) + 1) / 2 * 1000
+
+        var start = Date.now()
+        for (;;) {
+            if (Date.now() - start > time){
+                break
+            }
+        }
+    }, 1000)
+</script>

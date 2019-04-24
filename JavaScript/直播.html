@@ -1,0 +1,578 @@
+<!DOCTYPE html>
+<html lang="en" class="h-100 o-h">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Index</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO"
+        crossorigin="anonymous">
+    <style>
+        /* -- sidebar -- */
+        /* fit mobile */
+        @media only screen and (min-width: 0px) and (max-width: 400px) {
+            .embed-object {
+                height: 100%;
+            }
+            .fs-8 {
+                font-size: .8rem;
+            }
+            #sidebarCollapse {
+                display: none;
+            }
+            #sidebarCollapse span {
+                display: none;
+            }
+            .o-h {
+                overflow: scroll !important;
+            }
+            #sidebar,
+            #content {
+                position: unset !important;
+                width: 100% !important;
+            }
+            #content {
+                height: 60% !important;
+            }
+            #sidebar {
+                height: 40% !important;
+            }
+        }
+
+        /* ordinary status */
+        #sidebarCollapse {
+            -transform: matrix(1, 0, 0, 1, 0, 0);
+            width: 40px;
+            height: 40px;
+            background: rgba(255, 255, 255, 0.0);
+            cursor: pointer;
+            box-shadow: none;
+            outline: none !important;
+            border: none;
+        }
+
+        #sidebarCollapse span {
+            width: 80%;
+            height: 2px;
+            display: block;
+            transition: all 0.8s cubic-bezier(0.810, -0.330, 0.345, 1.375);
+            transition-delay: 0.2s;
+            transform: none;
+            background: #fff;
+            opacity: 1;
+            margin: 5px auto;
+        }
+
+        #sidebar {
+            position: absolute;
+            right: 0;
+            top: 0;
+            height: 100%;
+            transition: all 0.3s cubic-bezier(0.945, 0.020, 0.270, 0.665);
+            transform-origin: center right;
+        }
+
+        #sidebar.active {
+            /* margin-right: -250px; */
+            transform: rotateY(-180deg);
+            width: 0%;
+        }
+
+        #sidebar.active * {
+            display: none;
+        }
+
+        #sidebar .sidebar-header {
+            padding: 2.5%;
+            color: #fbfcd4;
+        }
+
+        #content {
+            position: absolute;
+            left: 0;
+            top: 0;
+            transition: all 1s;
+            height: 100%;
+        }
+
+        /* message */
+        .container {
+            max-width: 1170px;
+            margin: auto;
+        }
+
+        img {
+            max-width: 100%;
+        }
+
+        .inbox_msg {
+            clear: both;
+            overflow: hidden;
+        }
+
+        .top_spac {
+            margin: 20px 0 0;
+        }
+
+        .recent_heading {
+            float: left;
+            width: 40%;
+        }
+
+        .recent_heading h4 {
+            color: #05728f;
+            font-size: 21px;
+            margin: auto;
+        }
+
+        .chat_ib h5 {
+            font-size: 15px;
+            color: #464646;
+            margin: 0 0 8px 0;
+        }
+
+        .chat_ib h5 span {
+            font-size: 13px;
+            float: right;
+        }
+
+        .chat_ib p {
+            font-size: 14px;
+            color: #989898;
+            margin: auto
+        }
+
+        .chat_img {
+            float: left;
+            width: 11%;
+        }
+
+        .chat_ib {
+            float: left;
+            padding: 0 0 0 15px;
+            width: 88%;
+        }
+
+        .chat_people {
+            overflow: hidden;
+            clear: both;
+        }
+
+        .chat_list {
+            border-bottom: 1px solid #c4c4c4;
+            margin: 0;
+            padding: 18px 16px 10px;
+        }
+
+        .active_chat {
+            background: #ebebeb;
+        }
+
+        .incoming_msg_img {
+            border-radius: 3px;
+            margin-bottom: 2px;
+            color: #ebebeb;
+            font-size: .8em;
+            display: block;
+            font-weight: bolder;
+        }
+
+        .received_msg {
+            display: inline-block;
+            padding: 0 0 0 10px;
+            vertical-align: top;
+            width: auto;
+        }
+
+        .received_withd_msg p {
+            background: #ebebeb none repeat scroll 0 0;
+            border-radius: 3px;
+            color: #646464;
+            font-size: 14px;
+            margin: 0;
+            padding: 5px 10px 5px 12px;
+            width: 100%;
+        }
+
+        .time_date {
+            color: #747474;
+            display: block;
+            font-size: 12px;
+            margin: 8px 0 0;
+        }
+
+        .received_withd_msg {
+            width: 100%;
+        }
+
+        .mesgs {
+            float: left;
+            padding: 0px 5px 0px 5px;
+            width: 100%;
+        }
+
+        .sent_msg p {
+            background: #05728f none repeat scroll 0 0;
+            border-radius: 3px;
+            font-size: 14px;
+            margin: 0;
+            color: #fff;
+            padding: 5px 10px 5px 12px;
+            width: 100%;
+        }
+
+        .outgoing_msg {
+            overflow: hidden;
+            margin: 26px 0 26px;
+        }
+
+        .sent_msg {
+            float: right;
+            width: auto;
+        }
+
+        .input_msg_write input {
+            border: 0px;
+            color: #fff;
+            text-indent: 10px;
+            font-size: .9em;
+            min-height: 48px;
+            width: 100%;
+            transition: all 0.3s;
+        }
+
+        .input_msg_write input:focus {
+            outline: none;
+            box-shadow: inset 0px 0px 2px #FBC403;
+        }
+
+        .type_msg {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 100%;
+        }
+
+        .msg_send_btn {
+            border: none;
+            cursor: pointer;
+            font-size: 1.2em;
+            height: 100%;
+            position: absolute;
+            right: 0;
+            text-align: center;
+            top: 0;
+            width: 20%;
+        }
+
+        .messaging {
+            padding: 0 0 50px 0;
+        }
+
+        .msg_history {
+            height: 516px;
+            overflow-y: auto;
+        }
+
+        div::-webkit-scrollbar {
+            width: 0;
+        }
+
+        /* public */
+        .c-7 {
+            width: 70%;
+        }
+
+        .c-3 {
+            width: 30%;
+        }
+
+        .c-10 {
+            width: 100%;
+        }
+
+        .o-h {
+            overflow: hidden;
+        }
+
+        .r-0 {
+            right: 0;
+        }
+
+        .h-5 {
+            height: 5%;
+        }
+
+        .h-95 {
+            height: 95%;
+        }
+
+        .t-5 {
+            top: 5%;
+        }
+
+        .navbar-btn {
+            box-shadow: none;
+            outline: none !important;
+            border: none;
+        }
+
+        .text-gold {
+            color: #FBC403 !important;
+        }
+
+        .bg-gold {
+            background: #FBC403 !important;
+        }
+
+        .text-mid-gold {
+            color: #FFDD03 !important;
+        }
+
+        .text-less-gold {
+            color: #FBFCD4 !important;
+        }
+
+        .bg-gold-black {
+            background-color: #151515 !important;
+        }
+
+        .bg-gold-black-s {
+            background-color: #0a0a0a !important;
+        }
+    </style>
+</head>
+
+<body class="h-100 bg-light">
+    <nav class="navbar navbar-expand-md fixed-top navbar-dark bg-gold-black-s h-5 fs-8">
+        <a class="navbar-brand fs-8 text-gold" href="#">Movie Together</a>
+        <div class="form-inline mt-md-0 text-white position-absolute pr-5 r-0" id="welcome">
+            Welcome,
+        </div>
+        <div class="form-inline mt-md-0 text-white position-absolute r-0">
+            <button type="button" id="sidebarCollapse" class="navbar-btn">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+        </div>
+    </nav>
+    <div class="container-fluid position-absolute h-95 t-5" style="perspective: 1500px;">
+        <div class="row h-100 o-h">
+            <div class="c-7 pl-0 pr-0 bg-dark" id="content">
+                <div class="embed-responsive embed-responsive-16by9 embed-object h-100">
+                    <video class="h-100" id="videoElement" controls autoplay x5-video-player-type="h5" x5-video-player-fullscreen="true" playsinline
+                        webkit-playsinline>
+                        Your browser is too old which doesn't support HTML5 video.
+                    </video>
+                </div>
+            </div>
+            <nav class="c-3 pl-0 pr-0 pt-0 bg-gold-black-s" id="sidebar">
+                <div class="sidebar-header bg-gold-black text-mid-gold ">
+                    <h5>Messaging</h5>
+                </div>
+                <div class="messaging bg-gold-black-s">
+                    <div class="inbox_msg">
+                        <div class="mesgs">
+                            <div class="msg_history" id="msgPanel"></div>
+                            <div class="type_msg">
+                                <div class="input_msg_write">
+                                    <input type="text" id="chat-msg" class="bg-gold-black text-less-gold" placeholder="Type a message ">
+                                    <button onclick="sendMessage();" class="msg_send_btn bg-gold" type="button"><i class="fas fa-paper-plane"
+                                            aria-hidden="true"></i></button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </nav>
+        </div>
+    </div>
+
+
+    <!-- modals -->
+    <div class="modal fade bd-example-modal-sm show" id="register-modal" tabindex="-1" role="dialog" aria-hide="true">
+        <div class="modal-dialog modal-sm">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title h4" id="mySmallModalLabel">Register</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">×</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    <div class="form-group">
+                        <label for="exampleInputEmail1">Username</label>
+                        <input type="text" class="form-control" id="register-username" placeholder="Enter Username" required>
+                        <div class="invalid-feedback"></div>
+                    </div>
+                    <button type="button" onclick="register();" class="btn btn-primary">Register</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.0/js/bootstrap.min.js">
+    </script>
+    <script src="https://use.fontawesome.com/releases/v5.0.13/js/fontawesome.js">
+    </script>
+    <script src="https://use.fontawesome.com/releases/v5.0.13/js/fontawesome.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.0/umd/popper.min.js"></script>
+    <script src="https://use.fontawesome.com/releases/v5.0.13/js/solid.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/flv.js/1.3.2/flv.min.js"></script>
+    <script>
+        var $name = undefined
+        var chatWsCon = undefined
+        var msgWsCon = undefined
+        var $msgInput = $("#chat-msg")
+        var $msgpanel = $("#msgPanel");
+        var $usernameInput = $("#register-username")
+        function InitBasicConfig() {
+            var status = false
+            status = logincheck(true)
+            if (status == true) {
+                // flv player
+                if (flvjs.isSupported()) {
+                    var videoElement = document.getElementById('videoElement');
+                    var flvPlayer = flvjs.createPlayer({
+                        type: 'flv',
+                        url: '/movie'
+                    });
+                    flvPlayer.attachMediaElement(videoElement);
+                    flvPlayer.load();
+                    flvPlayer.play();
+                }
+                // websocket
+                chatWsCon = new WebSocket("wss://" + window.location.hostname + ":" + window.location.port + "/chat");
+                chatWsCon.onmessage = function (event) {
+                    data = event.data.replace(/\"/g, '')
+                    jsondata = JSON.parse(atou(data))
+                    $temppanel = $(generateMsgTpl(jsondata.name, jsondata.message, jsondata.datetime))
+                    $temppanel.hide()
+                    $msgpanel.prepend($temppanel)
+                    $temppanel.slideDown("slow")
+                }
+                chatWsCon.onclose = function () {
+                    alert("connection has been closed, refresh this website.")
+                }
+                window.onunload = function () {
+                    // close websocket connections
+                    chatWsCon.close()
+                }
+            }
+        }
+        function logincheck(init) {
+            var status = false
+            // login check
+            $.ajax({
+                url: '/checkuser',
+                type: 'get',
+                async: false,
+                success: function (arg) {
+                    arg = JSON.parse(arg)
+                    if (arg.err != undefined) {
+                        if (init) {
+                            $("#register-modal").modal('show')
+                        }
+                        status = false
+                    } else {
+                        $name = arg.name
+                        if (init) {
+                            $("#welcome").text($("#welcome").text() + $name)
+                        }
+                        status = true
+                    }
+                },
+                error: function (arg) {
+                    if (init) {
+                        $("#register-modal").modal('show')
+                    }
+                    status = false
+                }
+            });
+            return status
+        }
+        function sendMessage() {
+            $msg = $msgInput.val()
+            if ($msg.length <= 0) {
+                $msgInput.css("border", "1px solid rgb(220, 53, 69)")
+                return
+            }
+            chatWsCon.send($msgInput.val())
+            $msgInput.css("border", "none")
+            $msgInput.val("")
+        }
+        function generateMsgTpl(n, m, d) {
+            datetime = new Date(d)
+            datestr = datetime.getHours() + ":" + datetime.getMinutes() + " " + datetime.toDateString()
+            if (n == $name) {
+                return "<div class='outgoing_msg'><div class='sent_msg'><p>" + m + "</p><span class='time_date'>" + datestr + "</span></div></div>"
+            } else {
+                return "<div class='incoming_msg'><div class='incoming_msg_img'>" + n + "</div><div class='received_msg'><div class='received_withd_msg'><p>" + m + "</p><span class='time_date'>" + datestr + "</span></div></div></div>"
+            }
+        }
+        // register part
+        function showregistererror(err) {
+            var $usernameInput = $("#register-username")
+            $usernameInput.siblings(".invalid-feedback").text(err)
+            $usernameInput.siblings(".invalid-feedback").fadeIn("fast")
+        }
+        function register() {
+            if ($usernameInput.val().length <= 3) {
+                $usernameInput.css("border-color", "#dc3545")
+                showregistererror("username must more than 4")
+                return
+            }
+            $.ajax({
+                url: '/register',
+                type: 'POST',
+                contentType: "application/json",
+                data: JSON.stringify({
+                    "name": $usernameInput.val()
+                }),
+                async: false,
+                success: function (arg) {
+                    arg = JSON.parse(arg)
+                    if (arg.err != "") {
+                        showregistererror(arg.err)
+                    } else {
+                        window.location.reload()
+                    }
+                }
+            });
+        }
+        // 使用utf-8字符集解析base64字符串 
+        function atou(str) {
+            return decodeURIComponent(escape(window.atob(str)));
+        }
+        $(document).ready(function () {
+            // check websocket supports
+            if (!window["WebSocket"]) {
+                alert("Your browser does not support Websocket.")
+                return
+            }
+            // check login or not
+            InitBasicConfig()
+            // chat side bar
+            $('#sidebarCollapse').on('click', function () {
+                $('#sidebar').toggleClass('active').promise().done(function () {
+                    $('#content').toggleClass("c-10")
+                })
+            })
+            // bind text input event
+            $(window).keypress(function (event) {
+                if (event.which != 13) {
+                    return
+                }
+                if ($msgInput.is(":focus")) {
+                    sendMessage()
+                }
+            })
+        })
+    </script>
+
+</body>
+
+</html>

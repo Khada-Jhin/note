@@ -1,0 +1,17 @@
+<script>
+    var n = parseInt(Math.random()*100)
+    var x
+    var counter = 0
+    
+    while (x !== n) {
+        x = +prompt('please enter your number x= (0-100)')
+        counter = counter + 1
+        if (x > n) {
+            alert('太大')
+        } else if (x < n) {
+            alert('太小')  
+        }
+    }
+    alert('计算' + counter + '次,'  + x + '是正确答案');
+
+</script>
