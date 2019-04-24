@@ -1,0 +1,25 @@
+<script>
+    var countPrimesx = function (n) {
+        if (n < 3) {
+            return 0
+        }
+
+        var f = new Array(n).fill(true)
+
+        var count = n / 2 | 0
+        for (var i = 3; i * i < n; i += 2) {
+            // if (!f[i]) {
+            //   continue
+            // }
+
+            for (var j = i * i; j < n; j += 2 * i) {
+                if (f[j]) {
+                    --count
+                    f[j] = false
+                }
+            }
+        }
+
+        return count
+    }
+</script>
