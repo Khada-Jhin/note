@@ -1,0 +1,46 @@
+<script>
+    function table(ary) {
+        var keys = Array.from(new Set([].concat(...ary.map(Object.keys)))) //首先把数组里的每一项经过Object.keys转换成每一个元素的属性名的一个数组,然后使用concat展平,展平之后得到一个数组,然后再传给Set 构造一个集合出来,这个集合会自动去重,最后通过Array.from转回数组.
+        
+        var tableHtml = `
+        <style>
+            .number {
+                color: blue;
+            }
+            .string {
+                color: red;
+            }
+            .string::before {
+                content:'"'
+            }
+            .string::after {
+                content: '"'
+            }
+        </style>
+        `
+                            
+
+        tableHtml += '<table border = 1><tr>'
+        for (var key of keys) {
+            tableHtml += `<th>${key}</th>`
+        }
+        tableHtml += '</tr>' 
+
+        for (var item of ary) { 
+            tableHtml += '<tr>'
+            for (var key of keys) {
+                if (key in item) {
+                    var type = typeof item[key]
+                   tableHtml += `<td class = "${type}">${item[key]}</td>` 
+                } else {
+                    tableHtml += `<td class= "empty"></td>`
+                }
+                
+            }
+            table += '</tr>'
+        }
+
+        return tableHtml += '</table>'
+        
+    }
+</script>

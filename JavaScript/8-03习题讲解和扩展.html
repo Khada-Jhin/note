@@ -1,0 +1,60 @@
+<script>
+    class MUF extends Error {
+        constructor(msg) {
+            super(msg)
+        }
+    }
+
+    function primitveMultiply(a, b) {
+        if (Math.random() > 0.5) {
+            return a * b
+        } else {
+            throw new MUF('xxx')
+        }
+    }
+
+    function multiply(a, b) {
+        while (true) {
+            try {
+                return primitveMultiply(a, b)
+            } catch (e) {
+                if (e in MUF) {
+                    continue
+                } else {
+                    throw e
+                }
+            }
+        }
+
+    }
+</script>
+
+
+<script>
+    var box = (function () {
+        var locked = true
+        var content = []
+        return {
+            unlock: function () { locked = false; },
+            lock: function () { locked = true; },
+            
+            get content() {
+                if (locked) throw new Error(" Locked !");
+                return this._content;
+            }
+        };
+    }())
+
+
+    function withBoxUnlocked(f) {
+        box.unlock()
+
+        try {
+            return f()
+        } finally {
+            box.lock()
+        }
+    }
+
+    
+</script>

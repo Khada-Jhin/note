@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+
+<body>
+    <p>.includes 判断一个数组是否包含一个指定的值</p>
+
+    <p>filter 根据条件把数组上的某些元素过滤. 其返回的是新数组,原数组不变.</p>
+
+
+    <script>
+        function filter(array, test) {
+            var passed = []
+            for (var i = 0; i < array.length; i++) {
+                if (test(array[i], i, ary)) {
+                    passed.push(array[i])
+                }
+            }
+            return passed
+        }
+    </script>
+
+
+
+    <p>reduce 当你希望从数组的每一项计算得出一个结果,也不一定要每一项.</p>
+    //调用:[1,2,3,4,5,6].reduce(function reducer(init,ary[i],i, ary){},init)
+    <script>
+        function reduce(ary, reducer, init) {
+            for (var i = 0; i < ary.length; i++) {
+                init = reducer(init, ary[i], i, ary)
+            }
+            return init
+        }
+    </script>
+
+
+    <p>map 当你想把数组里每一个东西映射为其他东西的时候就用map</p>
+
+    <script>
+
+    </script>
+
+    <p>forEach 当你想对数组里的元素执行不确定操作时,使用它
+    </p>
+    <script>
+        function forEach(ary, iterator) {
+            for (var i = 0; i < ary.length; i++) {
+                if (iterator(ary[i], i, ary) === false) {
+                    break
+                }
+            }
+            return ary
+        }
+    </script>
+
+    <p>create 创建空原型</p>
+    <p>defineProperty</p>
+    <p>configurable 是否可配置</p>
+    <p>writable 是否可写</p>
+    <p>enumerable 是否可枚举</p>
+    <p>getOwnPropertyDescriptor 获取自有的属性的属性描述符</p>
+    <p>getOwnPropertyDescriptors 获取所有 </p>
+    <p></p>
+    <p></p>
+    <p></p>
+    <p></p>
+    <p></p>
+    <p></p>
+</body>
+
+
+
+
+</html>

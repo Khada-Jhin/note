@@ -1,0 +1,167 @@
+<script>
+    function arrayTolist(ary) {
+        if (ary.length === 0) {
+            return  null
+        }
+        var result = []
+        for (var i = 0; i < ary.length; i++) {
+            var node = {}
+            node.value = ary[i]
+            result.push(node)
+        }
+        for (var i = 0; i < result.length - 1; i++) {
+            result[i].next = result[i + 1]
+ 
+        }
+        result[i - 1].next = null
+        return result[0]
+    }
+
+    function arrayTolist1(ary) {
+        if (!ary.length) {
+            return null
+        }
+        var node
+        
+        var head = {val : ary[0]}
+        var pnode = head
+        for (var i = 1; i < ary.length; i++) {
+            node = {val : ary[i], next : null}
+            pnode.next = node
+            pnode = node
+        }
+        return head
+    }
+
+    function arrayTolist2(ary,start = 0) {
+        if (start === ary.length) {
+            return null
+        }
+        var node = {
+            value : ary[start],
+            next : null,
+        }
+        var rest = arrayTolist3(ary,start + 1)
+        node.next = rest
+        return node
+    }
+
+</script>
+
+<script>
+    //对象转数组
+    function listTwoArray(head) {
+        if (!head) {
+            return []
+        }
+        var result = []
+        var p = head 
+        while(p) {
+            result.push(p.value)
+            p = p.next
+        }
+        return result
+    }
+</script>
+<script>
+    //对象转数组 递归
+    function listTwoArray1(head) {
+        if (!head) {
+            return []
+        }
+        var result = [hrad.value]
+        var restValues = listTwoArray1(head.next)
+        return result.concat(restValues)
+    }
+</script>
+
+<script>
+    function prepend(head, value) {
+        var node = {
+            value : value,
+            next : head
+        }
+        return node
+
+    }
+
+    function nth(head, n) {
+        var p = head
+        var count = 0
+        while (count < n &&  p.next  !== null) {
+            count++
+            p = p.next
+        }
+        if (count !== n) {
+            return undefined
+        }
+        return p.value
+    }
+    
+    function nth2(head, n) {
+        if (head === null) {
+            return undefined
+        }
+        if (n === 0) {
+            return head.value
+        }
+        return nth(head.next, n - 1)
+    }
+
+    function insert(head, n, value) {
+        var node = {
+            value : value,
+            next : null,
+        }
+        if (n == 0) {
+            return node
+        }
+        if (head == null) {
+            return node
+        }
+        var p = head
+        var m = n - 1
+        for (var i = 0; i < m; i++) {
+            p = p.next
+        }
+        node.next = p.next
+        p.next = node
+        return head
+    }
+    function insert1(head, n, value) {
+        var node = {
+            value : value,
+            next : null,
+        }
+        if (head === null) {
+            return  node
+        }
+        if (n = 0) {
+            node.next = head
+            return node
+        }
+
+        head.next = insert1(head.next, n - 1, value)    
+
+    }
+    function remove(head,n) {
+        if (!head) {
+            return null
+            
+        }
+        if (n == 0) {
+            return head.next
+        }
+        var p = head
+        var m = n - 1
+        for (var i = 0; i < m; i++) {
+            p = p.next
+        }
+        p.next = p.next.next
+        return head
+    }   
+
+    var foo = {value : 1, next : {value : 2, next : {value : 3, next : {value : 4,
+    next : {value : 5, next : null}}}}}
+</script>
+
