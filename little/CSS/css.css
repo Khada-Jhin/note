@@ -1,0 +1,22 @@
+ul {
+  padding: 0;
+  list-style: none;
+}
+ul:hover > li .fa-star-o {
+  display: none;
+}
+ul:hover > li .fa-star {
+  display: inline-block;
+}
+ul li {
+  float: left;
+}
+ul li .fa-star {
+  display: none;
+}
+ul li:hover ~ li .fa-star {
+  display: none;
+}
+ul li:hover ~ li .fa-star-o {
+  display: inline-block;
+}

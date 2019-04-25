@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        .header{
+            width: 100%;
+            height: 40px;
+            background-color: skyblue;
+        }
+        .content{
+            border: 1px solid #000;
+            
+            overflow: hidden;
+            margin: 0 auto;
+        }
+        .content > *{
+            padding-bottom: 9999px;
+            margin-bottom: -9999px;
+        }
+        .box1{
+            width: 200px;
+            
+            background-color: salmon;
+            float: left;
+        }
+        .box2{
+            background-color: saddlebrown;
+            display: flow-root;
+        }
+        .box3{
+            width: 25%;
+            
+            background-color: seagreen;
+            float: right;
+        }
+        .footer{
+            width: 100%;
+            height: 40px;
+            background-color: skyblue;
+        }
+        /* 第二种办法 */
+        header{
+            width: 100%;
+            height: 40px;
+            background-color: skyblue;
+        }
+        main{
+            overflow: hidden;
+            border: 1px solid #000;
+            
+        }
+        main > *{
+            position: relative;
+        }
+        main > *::before{
+            content: "";
+            position: absolute;
+            background-color: inherit;
+            height: 99999px;
+            width: 100%;
+            z-index: -1;            
+        }
+        aside{
+            width: 200px;
+            background-color: salmon;
+            float: left;
+        }
+        section{
+            width: 25%;
+            
+            background-color: seagreen;
+            float: right;
+        }
+        div{
+            background-color: saddlebrown;
+            display: flow-root;
+        }
+        footer{
+            width: 100%;
+            height: 40px;
+            background-color: skyblue;
+        }
+
+    </style>
+</head>
+<body>
+    <div class="header">top</div>
+    <div class="content">
+        <div class="box1">Lorem ipsum dolor sit amet consectetur adipisicing elit. Autem perspiciatis nesciunt unde asperiores aliquam veniam dicta, aliquid beatae nisi ex!</div>
+        <div class="box3">Lorem ipsum dolor sit amet consectetur adipisicing elit. Itaque, vel?</div>
+        <div class="box2">Lorem ipsum dolor sit amet consectetur adipisicing elit. Laborum sequi tempore vero pariatur autem culpa quia ad nemo aliquid animi molestiae rerum ipsam, sed assumenda consequatur explicabo laudantium! Laudantium, sint! Lorem ipsum dolor sit amet consectetur adipisicing elit. Placeat ex, molestias aperiam commodi suscipit natus corporis expedita exercitationem facilis magni quis est, corrupti odio eaque alias fuga modi doloremque ut!</div>
+    </div>
+    <div class="footer">bpttom</div>
+<hr>
+<hr>
+<hr>
+<hr>
+<hr>
+<hr>
+
+    <header>tempore</header>
+    <main>
+        <aside>Lorem ipsum dolor sit amet consectetur adipisicing elit. Laborum nostrum quos exercitationem voluptate incidunt, cum ipsam saepe expedita reprehenderit atque?</aside>
+        <section>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Ipsam labore debitis aut nesciunt ea doloremque blanditiis? Provident cumque quia, fugit est numquam ad voluptatibus aliquam sequi dolorem beatae. Nemo, necessitatibus?</section>
+        <div>Lorem ipsum dolor sit amet consectetur adipisicing elit. Sequi dolorum voluptatem animi. Corrupti, delectus non?</div>
+    </main>
+    <footer>bottom</footer>
+
+</body>
+</html>

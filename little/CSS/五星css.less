@@ -1,0 +1,29 @@
+ul{
+    padding: 0; 
+    list-style: none;
+    &:hover > li{
+        .fa-star-o{
+            display: none;
+        }
+        .fa-star{
+            display: inline-block;
+        }
+    }
+    li{
+        float: left;
+        .fa-star{
+            display: none;
+        }
+        &:hover ~ li{
+            .fa-star{
+                display: none;
+            }
+        }
+        &:hover ~ li{
+            .fa-star-o{
+                display: inline-block;
+            }
+        }
+        
+    }
+}

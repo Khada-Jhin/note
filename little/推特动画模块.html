@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>tuite</title>
+    <style>
+        *{
+            padding: 0;
+            margin: 0;
+        }
+        input{
+            display: none;
+        }
+        label{
+            width: 100px;
+            height: 100px;
+            display: inline-block;
+            background: url("https://abs.twimg.com/a/1526339738/img/animations/web_heart_animation_edge.png") no-repeat
+        0 0;
+
+        }
+        label:hover{
+            background-position: -100px 0;
+        }
+        input:checked + label{
+            animation-name: bg;
+            animation-duration: 1s;
+            animation-timing-function: steps(28);
+            animation-fill-mode: forwards;
+        }
+        @keyframes bg {
+            0%{
+                background-position: 0px 0;
+            }
+            100%{
+                background-position: -2800px 0;
+            }
+        }
+
+
+
+    </style>
+</head>
+<body>
+<div>
+    <input type="checkbox" id="foo"><label for="foo"></label>
+</div>
+</body>
+</html>
