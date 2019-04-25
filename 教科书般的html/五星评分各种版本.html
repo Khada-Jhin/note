@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link href="http://netdna.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
+    <title>Document</title>
+    <style> 
+
+         
+        i{
+            float: left;        
+        }
+        i:hover ~ i:before{
+            content: "\f006";
+        } 
+        /* 第二种版本 */
+        ul{
+            padding: 0;
+            list-style: none;
+        }
+
+        ul li{
+            float: left;
+        }
+        li .fa-star{
+            display: none;
+        }
+        ul:hover > li .fa-star-o{
+            display: none;
+        }
+        ul:hover > li .fa-star{
+            display: inline-block;
+        }
+        li:hover ~ li .fa-star{
+            display: none;
+        }
+        li:hover ~ li .fa-star-o{
+            display: inline-block;
+        }
+
+    </style>
+</head>
+<body>
+     <p>第一种版本 本身自带5星</p>
+    <i class="fa fa-star"></i>
+    <i class="fa fa-star"></i>
+    <i class="fa fa-star"></i>
+    <i class="fa fa-star"></i>
+    <i class="fa fa-star"></i>
+    <br>
+    <p>第二个版本</p>
+    <hr>
+    <ul>
+        <li><i class="fa fa-star"></i><i class="fa fa-star-o"></i></li>
+        <li><i class="fa fa-star"></i><i class="fa fa-star-o"></i></li>
+        <li><i class="fa fa-star"></i><i class="fa fa-star-o"></i></li>
+        <li><i class="fa fa-star"></i><i class="fa fa-star-o"></i></li>
+        <li><i class="fa fa-star"></i><i class="fa fa-star-o"></i></li>
+    </ul>
+</body>
+</html>

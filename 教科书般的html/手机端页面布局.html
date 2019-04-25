@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <meta name="viewport" content="width=750">
+    <!-- 
+        name="vieport"会让手机以device-width的宽度为初始包含块渲染页面。（device-width根据设备的不同而不同，也可以填写一个纯数值） 
+    -->
+    <title>Document</title>
+    <style>
+        *{
+            margin: 0;
+        }
+        html{
+            font-size: calc(100vw / 750 * 100);
+        }
+        .box1{
+            position: absolute;
+            border: .08rem solid #000;
+            background-color: seagreen;
+            width: 3.38rem;
+            height: 2.54rem;
+            margin-left: 2.89rem;
+            margin-top: .38rem;
+        }
+        .box2{
+            border: .05rem so  lid #000;
+            margin-top: 1.56rem;
+            margin-left: .69rem;
+            height: 2.54rem;
+            width: 2.83rem;
+            position: absolute;
+            background-color: red;
+        }
+    </style>
+
+</head>
+<body>
+    <div class="box1"></div>
+    <div class="box2"></div>
+</body>
+</html>

@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>行内模式QQ邮箱</title>
+    <style>
+        *{
+            background-color: rgba(0,0,0,0.1);
+        }
+        body{
+            margin: 0;
+            font-size: 0;
+        }
+        body *{
+            font-size: 16px;
+        }
+
+        header, aside, main{
+            display: inline-block;
+        }
+        header{
+            width: 100%;
+            height: 100px;
+            background-color: red;
+        }
+        aside{
+            width: 200px;
+            height: calc(100vh - 100px);
+            vertical-align: top;
+            background: gold;
+        }
+        main{
+            width: calc(100% - 200px);
+            height: calc(100vh - 100px);
+            vertical-align: top;
+            background-color: greenyellow;
+        }
+    </style>
+</head>
+<body>
+  <header>header</header>
+  <aside>aside</aside>
+  <main>main</main>
+</body>
+</html>
