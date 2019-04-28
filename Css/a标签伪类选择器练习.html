@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>a标签伪类选择器练习</title>
+    <style>
+        *{
+            padding: 0;
+            margin: 0;
+        }
+        ul{
+            list-style: none;
+            width: 960px;
+            height: 40px;
+            margin: 0 auto;
+            margin-top: 100px;
+
+        }
+        li{
+            float: left;
+            width: 120px;
+            height: 40px;
+            line-height: 40px;
+            text-align: center;
+        }
+        /*
+1.a标签伪类选择器最好写在标签选择器的后面.
+2.a标签盒子相关的属性都写在标签选择器中.{显示模式/宽度/高度/padding/margin等}.
+3.a标签文字/背景相关都写在伪类选择器中.
+(不是强制要求,只是个好习惯.)
+
+        */
+        ul li a{
+            width: 120px;
+            height: 40px;
+            display: inline-block;
+        }
+        ul li a:link{
+            text-decoration: none;
+            color: white;
+            background: pink;
+        }
+        ul li a:visited{
+            color: skyblue;
+        }
+        ul li a:hover{
+            background: #a9a9a9;
+            color: red;
+        }
+        ul li a:active{
+            color: yellow;
+        }
+    </style>
+</head>
+<body>
+<div>
+    <ul>
+        <li><a href="#">我是导航</a></li>
+        <li><a href="#">我是导航</a></li>
+        <li><a href="#">我是导航</a></li>
+        <li><a href="#">我是导航</a></li>
+        <li><a href="#">我是导航</a></li>
+        <li><a href="#">我是导航</a></li>
+        <li><a href="#">我是导航</a></li>
+        <li><a href="#">我是导航</a></li>
+    </ul>
+</div>
+</body>
+</html>

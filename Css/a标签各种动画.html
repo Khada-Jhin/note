@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        body {
+            display: flex;
+            flex-direction: column;
+        }
+
+        a {
+            display: inline-block;
+            font-size: 3em;
+            text-decoration: none;
+            margin: 50px auto;
+            cursor: default;
+            animation-duration: 1s;
+            animation-timing-function: initial;
+            animation-iteration-count: infinite;
+            animation-play-state: paused;
+            animation-direction: alternate;
+        }
+
+        a:hover {
+            animation-play-state: running;
+
+        }
+
+        .a1 {
+            color: aqua;
+            animation-name: foo;
+        }
+
+        @keyframes foo {
+            0%,
+            11.1%,
+            100% {
+                transform: none;
+            }
+            22.2% {
+                transform: skewX(-12.5deg) skewY(-12.5deg)
+            }
+            33.3% {
+                transform: skewX(6.25deg) skewY(6.25deg)
+            }
+            44.4% {
+                transform: skewX(-3.125deg) skewY(-3.125deg)
+            }
+            55.5% {
+                transform: skewX(1.5625deg) skewY(1.5625deg)
+            }
+            66.6% {
+                transform: skewX(-0.78125deg) skewY(-0.78125deg)
+            }
+            77.7% {
+                transform: skewX(-0.390625deg) skewY(-0.390625deg)
+            }
+            88.8% {
+                transform: skewX(-0.1953125deg) skewY(-0.1953125deg)
+            }
+
+        }
+        .ul1{
+            width: 288.22px;
+            height: 64px;
+            position: relative;
+            transform-style: preserve-3d;
+            list-style: none;
+            padding: 0;
+            margin: auto;
+            box-sizing: border-box;
+            transform: rotateX(0deg);
+            transition:transform  0.8s;
+        }
+        .ul1 li{
+            height: 64px;
+            position: absolute;            
+        }
+        .ul1 li:nth-child(1){
+            
+            transform: translateZ(32px);
+        }
+        .ul1 li:nth-child(2){
+            
+            transform: rotateX(-90deg) translateZ(31px);
+        }
+        .ul1 a{
+            background-color: #2195de;
+            color: white;
+            font-size: 3em;
+            text-decoration: none;
+            margin: 0;
+        }
+        .ul1:hover{
+            transform: rotateX(90deg);
+        }
+    </style>
+</head>
+
+<body>
+    <a href="" class="a1">Amimate.css</a>
+    <ul class="ul1">
+        <li><a href="">Amimate.css</a></li>
+        <li><a href="">Amimate.css</a></li>
+    </ul>
+    
+</body>
+
+</html>

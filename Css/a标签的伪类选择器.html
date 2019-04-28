@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>a标签的伪类选择器</title>
+    <style>
+        a:link{
+            color: skyblue;
+        }
+        a:visited{
+            color: yellow;
+        }
+        a:hover{
+            color: #c05d5d;
+        }
+        a:active{
+            color: pink;
+        }
+
+    </style>
+</head>
+<body>
+<!--
+  a:link:应用于未访问状态的链接
+  a:visited:应用于已访问的链接
+  a:hover:应用于鼠标悬停在一个链接上时
+  a:active:应用于鼠标长按在一个链接上时
+
+  a: link→visited→hover→active正确顺序
+  -->
+<a href="https://www.taobao.com" target="_blank">淘宝</a>
+<a href="https://www.jd.com" target="_blank">京东</a>
+<a href="https://www.bilibili.com" target="_blank">bilibili</a>
+<a href="https://www.jianshu.com/" target="_blank">简书</a>
+<a href="http://f2er.club/" target="_blank">qianduan</a>
+
+
+</body>
+</html>
