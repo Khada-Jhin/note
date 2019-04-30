@@ -1,0 +1,245 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>视差滚动</title>
+    <!--<meta http-equiv="refresh" content="3" />-->
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+            /*background-color: rgba(0,0,0,0.1);*/
+        }
+        .other{
+            height: 100vh;
+            /*border-bottom: 10px dashed;*/
+
+        }
+        .box1{
+
+
+            background: url("https://gss0.baidu.com/9vo3dSag_xI4khGko9WTAnF6hhy/zhidao/wh%3D600%2C800/sign=b391f22113dfa9ecfd7b5e1152e0db3b/9f510fb30f2442a798716d98d343ad4bd113028b.jpg") no-repeat center fixed;
+        }
+        .box2{
+            transform: rotateZ(75deg);
+
+            background: url("https://imgsa.baidu.com/forum/w%3D580/sign=67480283c8bf6c81f7372ce08c3cb1d7/773b49fbb2fb431696e89c9124a4462308f7d339.jpg") no-repeat center fixed;
+        }
+        .box3{
+
+            transform: rotateZ(-75deg);
+            background: url("https://gss0.baidu.com/-4o3dSag_xI4khGko9WTAnF6hhy/zhidao/wh%3D600%2C800/sign=02332fd9b11c8701d6e3bae0174fb217/d53f8794a4c27d1efe5baaf919d5ad6eddc43889.jpg") no-repeat center fixed;
+        }
+        .box4{
+
+
+            background: url("https://imgsa.baidu.com/forum/w%3D580/sign=2cd61e646881800a6ee58906813433d6/1fadaefb43166d22b2c4f27f422309f79152d205.jpg") no-repeat center fixed;
+        }
+        .box5{
+
+
+            background: url("https://imgsa.baidu.com/forum/w%3D580/sign=15804dfdcbfc1e17fdbf8c397a91f67c/3c90bbefce1b9d16abd3608af7deb48f8d54649f.jpg") no-repeat center fixed;
+        }
+        .box6{
+
+
+            background: url("https://imgsa.baidu.com/forum/w%3D580/sign=6bd603d2b7de9c82a665f9875c8080d2/1b6b3a9759ee3d6dac75602047166d224e4ade05.jpg") no-repeat center fixed;
+        }
+        .box7{
+
+
+            background: url("https://imgsa.baidu.com/forum/w%3D580/sign=3175bf5a840a19d8cb03840d03f882c9/f8ad5f166d224f4add6e95f80df790529922d139.jpg") no-repeat center fixed;
+        }
+        .box8{
+
+
+            background: url("https://imgsa.baidu.com/forum/w%3D580/sign=80037d742adda3cc0be4b82831e83905/c0d4a5014a90f603b8b878ac3d12b31bb151edac.jpg") no-repeat center fixed;
+        }
+        .box9{
+
+
+            background: url("https://imgsa.baidu.com/forum/w%3D580/sign=d50f00271a178a82ce3c7fa8c602737f/edb9d21b9d16fdfaf8783c05b08f8c5495ee7b9f.jpg") no-repeat center fixed;
+        }
+        .box10{
+            font-size: 80px;
+            font-weight: bold;
+            text-align: center;
+            color: transparent;
+            -webkit-background-clip: text;
+            background-image: url("https://imgsa.baidu.com/forum/w%3D580/sign=15804dfdcbfc1e17fdbf8c397a91f67c/3c90bbefce1b9d16abd3608af7deb48f8d54649f.jpg");
+
+        }
+        .box11{
+            width: 130px;
+            height: 26px;
+            background: url("https://www.google.com.hk/images/nav_logo242_hr.png") no-repeat -201px -520px;
+            margin: 0 auto;
+            transition: background-position 0.5s;
+        }
+        .box11:hover{
+            background: url("https://www.google.com.hk/images/nav_logo242_hr.png") no-repeat -201px -551px;
+        }
+        .box12{
+            border: 1px solid #000;
+            background: url("https://meyerweb.com/eric/css/edge/complexspiral/glassy-bg.jpg") no-repeat fixed;
+        }
+        .hezi1{
+            margin: 80px 80px 160px 80px;
+            border: 3px solid #996633;
+            background: url("https://meyerweb.com/eric/css/edge/complexspiral/glassy-ripple.jpg") no-repeat fixed;
+
+        }
+        h1{
+            line-height: 66px;
+            margin: 26px 6px;
+            border: 1px solid gray;
+            background: rgb(203, 203, 203) url("https://meyerweb.com/eric/css/edge/complexspiral/glassy-gray.jpg") no-repeat fixed;
+        }
+        p{
+            margin: 15px 26px;
+        }
+        h2{
+            margin-left: -3px;
+            margin-right: -3px;
+            padding-left: 16px;
+            color: white;
+            line-height: 52px;
+            border: 1px solid #996633;
+            background: rgb(203, 177, 150) url("https://meyerweb.com/eric/css/edge/complexspiral/glassy-tan.jpg") no-repeat fixed;
+        }
+        ul{
+            padding-left: 50px;
+            margin-top: 15px;
+            margin-bottom: 15px;
+        }
+        span{
+            margin-left: 10px;
+        }
+
+    </style>
+</head>
+<body>
+<div class="box1 other"></div>
+<div class="box2 other"></div>
+<div class="box3 other"></div>
+<div class="box4 other"></div>
+<div class="box5 other"></div>
+<div class="box6 other"></div>
+<div class="box7 other"></div>
+<div class="box8 other"></div>
+<div class="box9 other"></div>
+<div class="box10 other">
+    Hello world
+    <br>
+    Hello world
+    <br>
+    Hello world
+    <br>
+    Hello world
+    <br>
+    Hello world
+    <br>
+    Hello world
+    <br>
+    Hello world
+    <br>
+    五颗星是过渡模块=.=
+</div>
+
+<div class="box11 other">
+
+    
+</div>
+
+<div class="box12">
+    <div class="hezi1">
+        <h1>
+            complexspiral distorted
+        </h1>
+        <p>
+            The page you are viewing right now exists to show off what can be accomplished with pure CSS1, and that's all. This variant on complexspiral doesn't even use any CSS2 to accomplish its magic. Remember: as you look this demo over, there is no Javascript here, nor are any PNGs being used, nor do I employ any proprietary extensions to CSS or any other language. It's all done using straight W3C-recommended markup and styling, all validated, plus a total of four (4) images.
+        </p>
+        <br>
+        <p>
+            Unfortunately, not every browser supports all of CSS1, and only those browsers which fully and completely support CSS1 will get this right. Despite some claims to the contrary, IE6/Win's rendering of this page is not correct, as it (as well as some other browsers) doesn't correctly support background-attachment: fixed for any element other than the body. That makes it impossible to pull off the intended effect. Other browsers may or may not get the effect right.
+        </p>
+        <h2>
+            Hands-on: Things to Examine
+        </h2>
+        <p>
+            Before you start, make sure you're viewing this page in one of the browsers mentioned above. Otherwise the descriptions to follow won't match what you see.
+        </p>
+        <br>
+        <p>
+            The first, easiest thing to do is scroll the page vertically. Make sure you scroll all the way to the very end of the page and back. Notice how the various areas with colored backgrounds also appear to distort the background image as if through mottled glass. Try changing the text size and notice how the compositing effect remains consistent. Then make your browser window really narrow and scroll horizontally. Again, everything should remain seamless and consistent.
+        </p>
+        <br>
+        <p>
+            The demonstrated effect, that of having various elements backed with translucent rippled glass of varying hues, is only possible using fixed-attachment backgrounds in CSS. (Okay, maybe it could be done in Flash; I don't know.) I don't think it's even possible with IE's proprietary filters, but even if this effect is possible with filters, I could easily enough devise one that isn't.
+        </p>
+        <h2>
+            I missed the original complexspiral demo-- how does this work?!?
+        </h2>
+        <p>
+            Glad you asked. The effect demonstrated here is achieved by using fixed background images, nothing more. For example, the main-content area (the blue part here) uses the following styles for the default spiral-shell background:
+        </p>
+        <br>
+        <pre>
+        div#content {background: white url(glassy-ripple.jpg) 0 0 no-repeat fixed;}
+    </pre>
+        <p>
+            The above is equivalent to these styles:
+        </p>
+        <br>
+        <pre>
+        div#content { <br>
+        background-color: white;<br>
+        background-image: url(glassy-ripple.jpg);<br>
+        background-position: 0 0;<br>
+        background-repeat: no-repeat;<br>
+        background-attachment: fixed;<br>
+        }
+    </pre>
+        <br>
+        <p>
+            The effect of these longer rules is exactly the same; they're just split out into individual background properties for more detailed consideration by you, gentle reader.
+        </p>
+        <br>
+        <p>
+            First, check out the rippled-shell image found here: url(glassy-ripple.jpg). Then come back to this page and I'll continue with the explanation. All done? Great.
+        </p>
+        <br>
+        <p>
+            According to CSS, any background image that is "fixed" using background-attachment: fixed; is fixed with respect to the viewport-- not the element with which the image is associated. So I set the rippled-shell background image to be aligned with the top left corner of the browser window (the viewport) with the values given for background-position. However, the image will only be visible wherever is intersects with the element to which it's been assigned. Therefore, even though the top left corner of the rippled-shell image is aligned with the top left corner of the viewport, we can only see it wherever it intersects with a div that has an id with a value of content (which, again, happens to be the one containing this text).
+        </p>
+        <br>
+        <p>
+            So I set a fixed background for the BODY, the content DIV, and H1 and H2 elements scattered through the document. In any given case of an element's display, we see whatever part of the associated background image intersects with the element. The rest of the background image remains hidden.
+        </p>
+        <br>
+        <p>
+            And that's how it works.
+        </p>
+        <h2>
+            I'm not seeing the compositing!
+        </h2>
+        <p>
+            Then I'm willing to bet that you're using Internet Explorer for Windows (any version), or possibly Opera (version 6 or earlier). Neither of these browsers fully support background-attachment: fixed for elements other than body. In the case of both, images are fixed with respect to the elements that contain them, not the browser window, which is not what CSS1 defines background-attachment: fixed to mean, although browsers are allowed to ignore fixed if they stick to CSS1 (CSS2 requires its implementation for conformance). And yes, this page uses a strict DOCTYPE, so IE6 is in "strict mode." I guess when Microsoft claims 100% CSS1 compliance, they're referring to the CSS1 core (a reduced subset of CSS1) instead of the entirety of the CSS1 specification. It tends to make me wonder how limited or flawed their "full support" is for other key open specifications, like HTML and DOM.
+        </p>
+        <h2>
+            Image credits
+        </h2>
+        <ul>
+            <li>Nautilus shell: scanned by and copyright Eric A. Meyer</li>
+        </ul>
+        <span><strong>Jump to</strong></span>
+        <ul>
+
+            <li>complex spiral (original)</li>
+            <li>complex spiral (devolved)</li>
+            <li>css/edge home</li>
+        </ul>
+    </div>
+</div>
+</body>
+</html>
