@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+        }
+        .all{
+            display: flex;
+            background-color: azure;
+            border: 1px solid #000;
+            width: 500px;
+            flex-wrap: wrap;
+        }
+        .box1{
+            width: 150px;
+            flex-grow: 1;
+            background-color: seagreen;
+            height: 150px;
+            xflex-shrink: 0.2;
+        }
+        .box2{
+            width: 300px;
+            flex-grow: 2;
+            background-color: bisque;
+            xflex-shrink: 0.3;
+        }
+        .box3{
+            width: 100px;
+            flex-grow: 1;
+            background-color: skyblue;
+            xflex-shrink: 0.3;
+            
+        }
+        
+        .foo{
+            display: flex;
+            flex-wrap: wrap;
+        }
+        .box4{
+            border-bottom: 1px solid #000;
+            width: 100vw;
+            height: 100px;
+            background-color: red
+        }
+        .box5{
+            width: 220px;
+            background-color: seagreen;
+            height: 500px;
+        }
+        .box6{
+            background-color: skyblue;
+            flex-grow: 1;
+            
+        }
+    </style>
+</head>
+<body>
+    <div class="all">
+        <div class="box1">1</div>
+        <div class="box2">2</div>
+        <div class="box3">3</div>
+        
+    </div>
+    <hr>
+    <hr>
+    <hr>
+    <hr>
+    <div class="foo">
+        <div class="box4">1</div>
+        <div class="box5">2</div>
+        <div class="box6">3</div>
+    </div>
+</body>
+</html>
