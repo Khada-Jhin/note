@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>input</title>
+    <style>
+        div{
+
+            margin: 0 auto;
+        }
+        input{
+            display: none;
+        }
+        label{
+            font-size: 30px;
+            display: inline-block;
+            width: 30px;
+            height: 30px;
+            border: 2px solid #000;
+            border-radius: 20px;
+            line-height: 30px;
+            text-align: center;
+            box-shadow: 0 2px 3px rgba(0,0,0,0.3);
+
+        }
+        input:checked + label{
+            color: red;
+            text-indent: 0;
+
+
+        }
+        input:active + label{
+            padding-right: 15px;
+        }
+
+    </style>
+</head>
+<body>
+<div>
+Lorem ipsum dolor sit amet<input type="checkbox" id="check"><label for="check">√</label>, consectetur adipisicing elit.
+</div>
+</body>
+</html>
