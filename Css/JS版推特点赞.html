@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>推特点赞小熊版本</title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+        }
+        .twitterLike{
+            display: block;
+            width: 100px;
+            height: 100px;
+            background: url("https://abs.twimg.com/a/1526339738/img/animations/web_heart_animation_edge.png") no-repeat;
+            margin: 0 auto;
+            /*             animation-name: foo;
+                        animation-duration: 1s;
+                        animation-timing-function: steps(28);
+                        animation-play-state: paused;
+                        animation-fill-mode: forwards; */
+        }
+        /*         @keyframes foo {
+                    from{
+                        background-position: 0 0;
+                    }
+                    to{
+                        background-position: -2800px 0;
+                    }
+
+                }
+
+                .twitterLike:focus{
+                    animation-play-state: running;
+                } */
+    </style>
+</head>
+<body>
+<div>
+    <a href="#" class="twitterLike" id="twitterLike"></a>
+</div>
+
+<script src="https://cdn.bootcss.com/jquery/3.3.1/jquery.min.js"></script>
+<script>
+    window.onload = function () {
+        var $icon = $("#twitterLike");
+        var $liked = false;
+
+        function backgroundMove(status) {
+            var $direction;
+            if (status === false) {
+                $direction = "-=100px";
+            }else{
+                $direction = "+=100px";
+            }
+            var $time = 1
+            var $start = setInterval(
+                function () {
+                    if ($time >= 28) {
+                        clearInterval($start);
+                    }
+                    $time += 1;
+                    $icon.animate(
+                        {
+                            "background-position-x": $direction,
+                        },
+                        0
+                    )
+                },
+                50,
+            )
+        }
+
+        $icon.click(function () {
+            backgroundMove($liked);
+            $liked = !$liked;
+        })
+    }
+</script>
+
+</body>
+</html>
