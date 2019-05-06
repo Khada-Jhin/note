@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>video标签</title>
+</head>
+<body>
+<!--video标签属性
+    src：链接
+    autoplay：是否自动播放
+    controls：是否显示控制条
+    poster：视频未播放时显示一张占位图片
+    loop：是否循环
+    preload：会预加载视频，与autoplay相冲
+    muted：静音
+    width：宽，设置一个就行
+    height：高，设置一个就行
+    -->
+<h2>有autoplay标签，会自动播放</h2>
+   <video src="英雄时刻_20171118-19点08分47s%20-%20副本.webm" autoplay="autoplay" controls="controls" width="400px" >
+    </video>
+<h2>有poster标签有占位图片</h2>
+    <video src="英雄时刻_20171118-19点08分47s%20-%20副本.webm" poster="bilibili.jpg" controls="controls" >
+    </video>
+<h2>多用于广告，会循环播放因为有loop标签</h2>
+    <video src="英雄时刻_20171118-19点08分47s%20-%20副本.webm" autoplay="autoplay" loop="loop" muted="muted" width="400px">
+    </video>
+<h2>有controls属性，会预加载视频</h2>
+    <video src="英雄时刻_20171118-19点08分47s%20-%20副本.webm" controls="controls" >
+    </video>
+
+
+</body>
+</html>
