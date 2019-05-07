@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>优先级之important</title>
+    <style>
+
+        .ss123{
+            color: tan !important;
+        }
+        #ss321{
+            color: red;
+        }
+
+    </style>
+    <!--important:
+    用于提升某个直接选中标签的选择器的某个属性的优先级.
+    important只能用于直接选中,不能用于间接选中-->
+</head>
+<body>
+<ul>
+    <li>
+        <p id="ss321" class="ss123">我是段落</p>
+    </li>
+</ul>
+
+</body>
+</html>
