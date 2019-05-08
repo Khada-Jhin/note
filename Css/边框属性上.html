@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>边框属性</title>
+    <style>
+        /*.box{*/
+            /*width: 100px;*/
+            /*height: 100px;*/
+            /*background: #f00;*/
+            /*border: tan solid 5px;*/
+        /*}*/
+        .box{
+            width: 500px;
+            height: 500px;
+            background: red;
+            border-width: 5px 5px 5px 5px;
+            border-style: solid dashed dotted double;
+            border-color: red green pink purple;
+        }
+
+    </style>
+    <!--边框属性格式:
+        1.连写(同时设置4条边)
+        border:边框的宽度 边框的样式 边框的颜色;
+        样式不能省略;其他省略之后为默认值. 颜色为默认黑色
+        2.连写(分别设置4条边)
+        border-top:边框的宽度 边框的样式 边框的颜色;
+        border-right:边框的宽度 边框的样式 边框的颜色;
+        border-bottom:边框的宽度 边框的样式 边框的颜色;
+        border-left:边框的宽度 边框的样式 边框的颜色;
+        样式: solid实线,dashed虚线,dotted小圆点,double双线.
+        3.连写(分别设置4条边框)
+        border-width:上 右 下 左;
+        border-style:上 右 下 左;
+        border-color:上 右 下 左;
+        -->
+</head>
+<body>
+<div class="box"></div>
+
+</body>
+</html>
