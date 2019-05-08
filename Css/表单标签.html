@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="cn">
+<head>
+    <meta charset="UTF-8">
+    <title>表单标签</title>
+</head>
+<body>
+<!--表单格式
+    <form>
+        <表单元素>
+    </form>-->
+<!--input标签-->
+    <form>
+        <!--明文输入框-->
+        账号：<input type="text"><br>
+        <!--暗文输入框-->
+        密码：<input type="password">
+        <hr>
+        <!--给输入框添加默认值-->
+        账号：<input type="text" value="589"><br>
+        密码：<input type="password" value="777">
+        <hr>
+        <!--单选框 checked属性为默认选择-->
+        性别：
+        <input type="radio" name="sex" checked>男
+        <input type="radio" name="sex">女
+        <input type="radio" name="sex">保密
+        <hr>
+        <!--多选框-->
+        爱好：
+        <input type="checkbox">游戏
+        <input type="checkbox">音乐
+        <input type="checkbox">电影
+        <br>
+        <!--按钮-->
+        按钮：
+        <input type="button" value="确认"><br>
+        <input type="image" src="bilibili.jpg"><br>
+        <input type="reset"><br><!--重置按钮-->
+        <input type="submit"><br><!--提交按钮-->
+        <!--隐藏域-->
+        隐藏域：
+        <input type="hidden"> <br>
+        <!--label标签-->
+        label标签：
+        <label for="888">账号：</label><input type="text" id="888">
+        <label for="999">密码：</label><input type="password" id="999">
+        <br>
+        <!--datalist标签-->
+        datalist标签：
+        <input type="text" list="车">
+        <datalist id="车">
+            <option >林肯mkz</option>
+            <option >林肯mks</option>
+            <option >林肯mkc</option>
+            <option >林肯大陆</option>
+            <option >林肯领航员</option>
+
+        </datalist>
+
+    </form>
+<!--select标签
+       用于定义下拉列表-->
+    <select>
+        <optgroup label="1">
+            <option>1</option>
+            <option>1</option>
+            <option>1</option>
+            <option>1</option>
+        </optgroup>
+        <optgroup label="5">
+            <option>5</option>
+            <option>5</option>
+            <option>5</option>
+            <option>5</option>
+        </optgroup>
+    </select>
+<hr>
+<!--textarea标签，多行输入框 可以用过cols和rows指定宽和高
+-->
+    <textarea>
+
+    </textarea>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+    <form action="https://www.520it.com">
+        <fieldset>
+            <legend>注册界面</legend>
+
+            <p>
+                账号：<input type="text" name="768">
+            </p>
+            <p>
+                密码：<input type="password" name="789">
+            </p>
+            <p>
+                性别：
+                <input type="radio" name="121" value="nan">男
+                <input type="radio" name="121" value="nv">女
+                <input type="radio" name="121" checked="checked" value="yao">未知
+            </p>
+            <p>
+                爱好：
+                <input type="checkbox" name="544" value="basketball">篮球
+                <input type="checkbox" name="544" value="football">足球
+                <input type="checkbox" name="544" value="pai">排球
+            </p>
+            <p>
+                个人简介：
+                <textarea cols="30" rows="10" name="899"></textarea>
+            </p>
+            <p>
+                生日：
+                <input type="date" name="366">
+            </p>
+            <p>
+                邮箱：
+                <input type="email" name="695">
+            </p>
+            <p>
+                手机：
+                <input type="number" name="413">
+            </p>
+            <p>
+            <input type="submit" value="注册">&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;
+
+            <input type="reset" value="清空">
+        </p>
+        </fieldset>
+
+    </form>
+
+</html>

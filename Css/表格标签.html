@@ -1,0 +1,464 @@
+<!DOCTYPE html>
+<html lang="cn">
+<head>
+    <meta charset="UTF-8">
+    <title>表格标签</title>
+</head>
+<body>
+<!--表格标签格式
+    <table>
+        <tr>
+            <td>            </td>
+        </tr>
+    </table>-->
+<!--4行6列表格模式-->
+<table border="2">
+    <tr>
+        <td>年龄</td>
+        <td>性别</td>
+        <td>爱好</td>
+        <td>事业</td>
+        <td>金钱</td>
+        <td>责任</td>
+    </tr>
+    <tr>
+        <td>1</td>
+        <td>2</td>
+        <td>3</td>
+        <td>4</td>
+        <td>5</td>
+        <td>6</td>
+    </tr>
+    <tr>
+        <td>1</td>
+        <td>2</td>
+        <td>3</td>
+        <td>4</td>
+        <td>5</td>
+        <td>6</td>
+    </tr>
+    <tr>
+        <td>1</td>
+        <td>2</td>
+        <td>3</td>
+        <td>4</td>
+        <td>5</td>
+        <td>6</td>
+    </tr>
+</table>
+<!--表格标签3个属性
+    1.宽度，高度《table和td可以添加》
+    2.水平对齐和垂直对齐《水平对齐table，tr，td可以使用，垂直只有tr，td使用》
+    水平：align=left(左),center（居中）right（右）,垂直：valign=top,center,bottom.
+    3.外边去和内边距《table使用》外边距：cellspacing，内边距:cellpadding
+
+    -->
+<table border="1" width="500px" align="center" cellspacing="12px" cellpadding="1px">
+    <tr align="center" >
+        <td width="200px" height="50px">1.1</td>
+        <td>1.2</td>
+    </tr>
+    <tr>
+        <td>2.1</td>
+        <td>2.2</td>
+    </tr>
+</table>
+<table bgcolor="black" cellspacing="1px">
+    <tr bgcolor="white">
+        <td>1</td>
+        <td>2</td>
+    </tr>
+    <tr bgcolor="white">
+        <td>3</td>
+        <td>4</td>
+    </tr>
+</table>
+
+    <table bgcolor="black" cellspacing="1px" width="800px"  >
+    <caption>
+        <h2>今日小说排行榜</h2>
+    </caption>
+        <tr bgcolor="white">
+            <th>排名</th>
+            <th>关键词</th>
+            <th>趋势</th>
+            <th>关键搜索</th>
+            <th>最近七日</th>
+            <th>相关链接</th>
+        </tr>
+        <tr bgcolor="white" align="center">
+            <td>1</td>
+            <td>暴走大事件</td>
+            <td><img src="111.png" ></td>
+            <td>213355</td>
+            <td>552133</td>
+            <td>
+                <a href="https://tieba.baidu.com/f?fr=ala0&kw=bilibili">贴吧</a>
+                <a href="http://image.baidu.com/">图片</a>
+                <a href="https://baike.baidu.com/item/%E7%99%BE%E5%BA%A6%E5%9B%BE%E7%89%87/318974?fr=aladdin">百度百科</a>
+            </td>
+        </tr>
+        <tr bgcolor="white" align="center">
+            <td>1</td>
+            <td>暴走大事件</td>
+            <td><img src="111.png" ></td>
+            <td>213355</td>
+            <td>552133</td>
+            <td>
+                <a href="https://tieba.baidu.com/f?fr=ala0&kw=bilibili">贴吧</a>
+                <a href="http://image.baidu.com/">图片</a>
+                <a href="https://baike.baidu.com/item/%E7%99%BE%E5%BA%A6%E5%9B%BE%E7%89%87/318974?fr=aladdin">百度百科</a>
+            </td>
+        </tr>
+        <tr bgcolor="white" align="center">
+            <td>1</td>
+            <td>暴走大事件</td>
+            <td><img src="111.png" ></td>
+            <td>213355</td>
+            <td>552133</td>
+            <td>
+                <a href="https://tieba.baidu.com/f?fr=ala0&kw=bilibili">贴吧</a>
+                <a href="http://image.baidu.com/">图片</a>
+                <a href="https://baike.baidu.com/item/%E7%99%BE%E5%BA%A6%E5%9B%BE%E7%89%87/318974?fr=aladdin">百度百科</a>
+            </td>
+        </tr>
+        <tr bgcolor="white" align="center">
+            <td>1</td>
+            <td>暴走大事件</td>
+            <td><img src="111.png" ></td>
+            <td>213355</td>
+            <td>552133</td>
+            <td>
+                <a href="https://tieba.baidu.com/f?fr=ala0&kw=bilibili">贴吧</a>
+                <a href="http://image.baidu.com/">图片</a>
+                <a href="https://baike.baidu.com/item/%E7%99%BE%E5%BA%A6%E5%9B%BE%E7%89%87/318974?fr=aladdin">百度百科</a>
+            </td>
+        </tr>
+        <tr bgcolor="white" align="center">
+            <td>1</td>
+            <td>暴走大事件</td>
+            <td><img src="111.png" ></td>
+            <td>213355</td>
+            <td>552133</td>
+            <td>
+                <a href="https://tieba.baidu.com/f?fr=ala0&kw=bilibili">贴吧</a>
+                <a href="http://image.baidu.com/">图片</a>
+                <a href="https://baike.baidu.com/item/%E7%99%BE%E5%BA%A6%E5%9B%BE%E7%89%87/318974?fr=aladdin">百度百科</a>
+            </td>
+        </tr>
+        <tr bgcolor="white" align="center">
+            <td>1</td>
+            <td>暴走大事件</td>
+            <td><img src="111.png" ></td>
+            <td>213355</td>
+            <td>552133</td>
+            <td>
+                <a href="https://tieba.baidu.com/f?fr=ala0&kw=bilibili">贴吧</a>
+                <a href="http://image.baidu.com/">图片</a>
+                <a href="https://baike.baidu.com/item/%E7%99%BE%E5%BA%A6%E5%9B%BE%E7%89%87/318974?fr=aladdin">百度百科</a>
+            </td>
+        </tr>
+    </table>
+    <table bgcolor="black" cellspacing="1px" align="center" width="400px">
+        <caption>
+        <h2>学员信息</h2>
+        </caption>
+        <tr align="left" bgcolor="white">
+            <th>姓名</th>
+            <th>年龄</th>
+            <th>身高</th>
+            <th>分数</th>
+        </tr>
+        <tr bgcolor="white">
+            <td align="left">张三</td>
+            <td>11</td>
+            <td>1.65</td>
+            <td>100</td>
+        </tr>
+        <tr bgcolor="white">
+            <td align="left">李四</td>
+            <td>21</td>
+            <td>1.65</td>
+            <td>95</td>
+
+        </tr>
+        <tr bgcolor="white">
+            <td align="left">王五</td>
+            <td>22</td>
+            <td>1.70</td>
+            <td>60</td>
+
+        </tr>
+        <tr bgcolor="white">
+            <td align="left">赵六</td>
+            <td>28</td>
+            <td>1.78</td>
+            <td>75</td>
+
+        </tr>
+        <tr bgcolor="white">
+            <td align="left">王尼玛</td>
+            <td>22</td>
+            <td>1.55</td>
+            <td>80</td>
+
+        </tr>
+        <tr bgcolor="white">
+            <td align="left">赵铁柱</td>
+            <td>23</td>
+            <td>1.85</td>
+            <td>100</td>
+
+        </tr>
+        <tr bgcolor="white">
+            <td align="right">6</td>
+            <td align="right">1.95959595</td>
+            <td align="right">1.68686868</td>
+            <td align="right">1.59584455</td>
+
+        </tr>
+
+    </table>
+<br>
+    <table bgcolor="black" width="600px" height="400" align="center">
+        <tr bgcolor="white">
+            <td colspan="2"></td>
+            <td></td>
+
+        </tr>
+        <tr bgcolor="white">
+            <td></td>
+            <td></td>
+            <td rowspan="2"></td>
+        </tr>
+        <tr bgcolor="white">
+            <td></td>
+            <td></td>
+
+        </tr>
+    </table>
+    <table bgcolor="black" width="600" height="400">
+        <tr bgcolor="white">
+            <td></td>
+            <td></td>
+            <td></td>
+        </tr>
+        <tr bgcolor="white">
+            <td colspan="3"></td>
+
+        </tr>
+        <tr bgcolor="white">
+            <td></td>
+            <td></td>
+            <td></td>
+        </tr>
+        <tr bgcolor="white">
+            <td></td>
+            <td></td>
+            <td></td>
+        </tr>
+    </table>
+<br>
+    <table bgcolor="black" width="600" height="400">
+    <tr bgcolor="white">
+        <td></td>
+        <td rowspan="4"></td>
+        <td></td>
+    </tr>
+    <tr bgcolor="white">
+        <td></td>
+
+        <td></td>
+    </tr>
+    <tr bgcolor="white">
+        <td></td>
+
+        <td></td>
+    </tr>
+    <tr bgcolor="white">
+        <td></td>
+
+        <td></td>
+    </tr>
+</table>
+<br>
+    <table bgcolor="black" width="600" height="400">
+    <tr bgcolor="white">
+        <td></td>
+        <td></td>
+        <td></td>
+    </tr>
+    <tr bgcolor="white">
+
+        <td colspan="2"></td>
+        <td></td>
+    </tr>
+    <tr bgcolor="white">
+        <td></td>
+        <td rowspan="2"></td>
+        <td></td>
+    </tr>
+    <tr bgcolor="white">
+        <td></td>
+
+        <td></td>
+    </tr>
+</table>
+<br>
+    <table bgcolor="black" width="600" height="400">
+    <tr bgcolor="white">
+        <td></td>
+        <td></td>
+        <td></td>
+    </tr>
+    <tr bgcolor="white">
+        <td></td>
+        <td colspan="2" rowspan="2"></td>
+
+    </tr>
+    <tr bgcolor="white">
+        <td></td>
+    </tr>
+    <tr bgcolor="white">
+        <td></td>
+        <td></td>
+        <td></td>
+
+    </tr>
+</table>
+<table border="1">
+    <caption>成绩单</caption>
+        <!--<tbody>-->
+            <tr>
+                <th>学号</th>
+                <th>语文</th>
+                <th>数学</th>
+                <th>英语</th>
+                <th>计算机</th>
+            </tr>
+            <tr>
+                <th>001</th>
+                <th>98</th>
+                <th>98</th>
+                <th>98</th>
+                <th>100</th>
+            </tr>
+            <tr>
+                <th>001</th>
+                <th>98</th>
+                <th>98</th>
+                <th>98</th>
+                <th>100</th>
+            </tr>
+            <tr>
+                <th>001</th>
+                <th>98</th>
+                <th>98</th>
+                <th>98</th>
+                <th>100</th>
+            </tr>
+            <tr>
+                <th>001</th>
+                <th>98</th>
+                <th>98</th>
+                <th>98</th>
+                <th>100</th>
+            </tr>
+        <!--</tbody>-->
+</table>
+<!--快速新建一行  shift+enter  -->
+<table border="1" width="1000px" height="800px" >
+    <tr>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+    </tr>
+    <tr>
+        <td></td>
+        <td rowspan="3"></td>
+        <td></td>
+        <td></td>
+        <td></td>
+    </tr>
+    <tr>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+
+    </tr>
+    <tr>
+        <td></td>
+        <td colspan="3"></td>
+
+
+    </tr>
+    <tr>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+    </tr>
+    <tr>
+        <td></td>
+        <td colspan="2" rowspan="2"></td>
+        <td></td>
+        <td></td>
+
+    </tr>
+    <tr>
+        <td></td>
+        <td></td>
+        <td></td>
+
+
+    </tr>
+    <tr>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+    </tr>
+</table>
+<table width="500px" height="500px" border="1" >
+    <tr>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+    </tr>
+    <tr>
+        <td></td>
+        <td colspan="2"></td>
+        <td rowspan="2"></td>
+        <td></td>
+    </tr>
+    <tr>
+        <td></td>
+        <td rowspan="2"></td>
+        <td></td>
+        <td></td>
+
+    </tr>
+    <tr>
+        <td></td>
+        <td colspan="2"></td>
+        <td></td>
+
+    </tr>
+    <tr>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+    </tr>
+</table>
+
+</body>
+</html>
