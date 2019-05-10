@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <title>Page Title</title>
+    <link href="http://netdna.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
+    <style>
+        html, body{
+            margin: 0 auto;
+        }
+        ul{
+            list-style: none;
+            padding: 0;
+        }
+        li{
+            color: #000;
+            font-size: 40px;
+            float: left;
+            margin-right: 5px;
+        }
+    </style>
+</head>
+<body>
+<ul class="aa">
+    <li class="star"><i class="fa fa-star-o"> </i>0</li>
+    <li class="star"><i class="fa fa-star-o"> </i>1</li>
+    <li class="star"><i class="fa fa-star-o"> </i>2</li>
+    <li class="star"><i class="fa fa-star-o"> </i>3</li>
+    <li class="star"><i class="fa fa-star-o"> </i>4</li>
+</ul>
+</body>
+<script src="https://cdn.bootcss.com/jquery/3.3.1/jquery.min.js"></script>
+<script>
+    var $starlist = $(".star");
+    $starlist.mouseover(function () {
+        $(this).css("color","red");
+        var $leftall=$(this).prevall
+    });
+    $starlist.mouseout(function () {
+        $(this).css("color","black")
+    });
+    console.log($starlist);
+</script>
+</html>

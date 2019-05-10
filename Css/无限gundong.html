@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+        }
+        div{
+            margin: 100px auto;
+            width: 1600px;
+            height: 400px;
+            overflow: hidden;
+        }
+        ul{
+            width: 4000px;
+            height: 400px;
+            list-style: none;
+            background-color: black;
+            animation-name: foo;
+            animation-duration: 10s;
+            animation-timing-function: linear;
+            animation-iteration-count: infinite;
+
+        }
+        li{
+            float: left;
+            width: 400px;
+            height: 400px;
+        }
+        li img{
+            width: 400px;
+            height: 400px;
+        }
+        @keyframes foo{
+            form{
+                margin-left:0px;
+            }
+            to{
+                margin-left: -2400px;
+            }
+        }
+        ul:hover{
+            animation-play-state: paused;
+        }
+        ul:hover li{
+            opacity: 0.5;
+        }
+        ul li:hover{
+            opacity: 1;
+        }
+    </style>
+</head>
+<body>
+    <div>
+        <ul>
+            <li><img src="image/q1.jpg" alt=""></li>
+            <li><img src="image/q2.jpg" alt=""></li>
+            <li><img src="image/q3.jpg" alt=""></li>
+            <li><img src="image/q4.jpg" alt=""></li>
+            <li><img src="image/q5.jpg" alt=""></li>
+            <li><img src="image/q6.jpg" alt=""></li>
+            <li><img src="image/q1.jpg" alt=""></li>
+            <li><img src="image/q2.jpg" alt=""></li>
+            <li>
+                <img src="image/q3.jpg" alt="">
+            </li>
+            <li>
+                <img src="image/q4.jpg" alt="">
+            </li>
+        </ul>
+    </div>
+</body>
+</html>
