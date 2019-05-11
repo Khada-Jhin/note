@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>定位流的子绝父相</title>
+    <style>
+        *{
+            padding: 0;
+            margin: 0;
+        }
+        ul{
+            list-style: none;
+            width: 800px;
+            height: 80px;
+            margin: 0 auto;
+            margin-top: 100px;
+            background: yellowgreen ;
+            position: relative;
+        }
+        ul li{
+            float: left;
+            line-height: 80px;
+            width: 100px;
+            text-align: center;
+            background: #808080;
+            position: relative;
+        }
+        ul li:nth-of-type(4){
+
+            background: yellowgreen;
+            position: relative;
+        }
+        ul li img{
+            position: absolute;
+            bottom: 65px;
+            left: 50%;
+            margin-left: -10px;
+
+        }
+    </style>
+</head>
+<body>
+<!--
+子绝父相:子元素用绝对定位,父元素用相对定位.
+-->
+<ul>
+    <li>服装城</li>
+    <li>美妆馆</li>
+    <li>京东超市</li>
+    <li>
+        全球购
+        <img src="111.png">
+    </li>
+    <li>闪购</li>
+    <li>团购</li>
+    <li>拍卖</li>
+    <li>金融</li>
+</ul>
+</body>
+</html>

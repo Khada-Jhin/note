@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>动画模块云层效果</title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+            list-style: none;
+        }
+        ul{
+            margin: 200px auto;
+            height: 500px;
+            background: skyblue;
+            /*animation: yunc 10s linear  infinite;*/
+            position: relative;
+        }
+        ul li{
+            width: 100%;
+            height: 100%;
+            display: inline-block;
+            position: absolute;
+
+        }
+        ul li:nth-child(1){
+            background: url("image/nu3.jpg") no-repeat;
+            animation: one 10s linear  infinite alternate;
+        }
+        ul li:nth-child(2){
+            background: url("image/nu3.jpg") no-repeat;
+
+        }
+        ul li:nth-child(3){
+            background: url("image/nu3.jpg") no-repeat;
+
+        }
+        @keyframes one {
+            from{
+                margin-left: 0;
+            }
+            to{
+                margin-left: 100%;
+            }
+        }
+    </style>
+</head>
+<body>
+<div>
+    <ul>
+        <li></li>
+        <li></li>
+        <li></li>
+    </ul>
+</div>
+</body>
+</html>

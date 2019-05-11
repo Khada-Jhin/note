@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>相对定位</title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+        }
+        div{
+            width: 100px;
+            height: 100px;
+        }
+        .box1{
+            background: red;
+        }
+        .box2{
+            background: greenyellow;
+            position: relative;
+            top: 20px;
+            left: 20px;
+        }
+        .box3{
+            background: blueviolet;
+        }
+    </style>
+</head>
+<body>
+<!--1.定位流分类
+1.1相对定位:
+添加position: relative;使其变成相对定位
+相对定位注意点:
+
+在相对定位中同一个方向上的定位属性只能使用一个
+top/bottom 只能用一个
+left/right 只能用一个
+相对定位是不脱离标准流的, 会继续在标准流中占用一份空间
+由于相对定位是不脱离标准流的, 所以在相对定位中区分块级元素/行内元素/行内块级元素
+由于相对定位是不脱离标准流的, 并且相对定位的元素会占用标准流中的位置, 所以当给相对定位的元素设置margin/padding等属性的时会影响到标准流的布局
+
+-->
+<div class="box1"></div>
+<div class="box2"></div>
+<div class="box3"></div>
+</body>
+</html>
