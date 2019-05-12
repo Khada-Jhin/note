@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>浮动清除方式五</title>
+    <style>
+        *{
+            padding: 0;
+            margin: 0;
+        }
+        /*div{
+            width: 100px;
+            height: 100px;
+            background: pink;
+            overflow: hidden;
+        }*/
+        .box1{
+            /*overflow: hidden;与伪类清除浮动的方式一样不兼容IE6*/
+            overflow: hidden;
+            background-color: red;
+            *zoom: 1;
+        }
+        .box2{
+            background-color: greenyellow;
+        }
+        .box1 p{
+            width: 100px;
+            background-color: blue;
+        }
+        .box2 p{
+            width: 100px;
+            background-color: green;
+        }
+        p{
+            float: left;
+        }
+    </style>
+</head>
+<body>
+<!--
+overflow: hidden;作用:
+1.将超出标签范围的内容裁减掉
+2.清除浮动
+3.可以通过overflow: hidden;让一对嵌套的盒子设置margin-top之后外面的盒子不被顶下来
+-->
+<!--<div>
+    我是文字我是文字我是文字我是文字我是文字我是文字我是文字我是文字我是文字我是文字我是文字我是文字我是文字我是文字我是文字我是文字我是文字我是文字
+</div>-->
+<div class="box1">
+    <p>我是文字1</p>
+    <p>我是文字1</p>
+    <p>我是文字1</p>
+</div>
+
+<div class="box2">
+    <p>我是文字2</p>
+    <p>我是文字2</p>
+    <p>我是文字2</p>
+</div>
+</body>
+</html>

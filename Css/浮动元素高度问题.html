@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>浮动元素高度问题</title>
+    <style>
+        *{
+            padding: 0px;
+            margin: 0px;
+        }
+        div{
+            border: 1px solid #000;
+        }
+        p{
+            width: 50px;
+            height: 50px;
+            background: red;
+            float: left;
+        }
+        
+    </style>
+</head>
+<body>
+<!--
+1.标准流中内容高度可以撑起父元素的高度
+2.浮动流中内容高度则无法撑起父元素的高度
+-->
+<div>
+    <p></p>
+</div>
+
+</body>
+</html>
