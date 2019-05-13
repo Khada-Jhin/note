@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        * {
+            background-color: rgba(0, 0, 0, 0.1);
+        }
+
+        span {
+            --d: 464deg;
+            width: 50px;
+            height: 50px;
+            margin-top: 100px;
+            margin-left: 100px;
+            display: inline-block;
+            background-image: linear-gradient(red, green);
+            xtransform: rotate(var(--d)) translatex(100px) rotate(calc(0deg - var(--d)));
+            xtransition: 2s;
+            animation: spin 5s linear infinite;
+        }
+
+        @keyframes spin {
+            from {
+                transform: rotate(0deg) translatex(100px) rotate(0deg);
+            }
+            to {
+                transform: rotate(360deg) translatex(100px) rotate(-360deg);
+            }
+        }
+    </style>
+
+
+</head>
+
+<body>
+    <span id="a"></span>
+</body>
+<script>
+    var el = document.getElementById('a')
+
+    requestAnimationFrame(function ani(time) {
+        var pos = el.getBoundingClientRect()
+
+        console.log(time, pos.y)
+
+        requestAnimationFrame(ani)
+    })
+
+</script>
+
+</html>
