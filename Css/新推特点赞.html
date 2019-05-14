@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>新推特点赞</title>
+    <style>
+        input{
+            display: none;
+        }
+        label{
+            display: inline-block;
+
+            width: 100px;
+            height: 100px;
+            background: url("https://abs.twimg.com/a/1526339738/img/animations/web_heart_animation_edge.png")
+        no-repeat 0 0;
+            transition: background-position steps(27);
+        }
+        label:hover{
+            background-position: -100px 0;
+            transition-duration:1ms;
+        }
+        input:checked + label{
+            background-position: -2800px 0;
+            transition-duration: 1s;
+        }
+    </style>
+</head>
+<body>
+<div>
+    <input type="checkbox" id="like"><label for="like"></label>
+</div>
+</body>
+</html>

@@ -114,4 +114,23 @@ function partition(ary, start = 0, end = ary.length -1) {
 
 
 
+var animal = {
+  createNew : function () {
+    var cat = {}
+    cat.sleep = function () {
+      alert('睡懒觉')
+    }
+    return cat
+  }
+}
+
+var dog = {
+  createNew: function() {
+    var dog = animal.createNew()
+    dog.makeSound = function () {
+      alert('汪汪汪')
+    }
+    return dog
+  }
+}
 

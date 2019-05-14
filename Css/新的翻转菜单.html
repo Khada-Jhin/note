@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>新的翻转菜单</title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+        }
+        ul{
+            list-style: none;
+        }
+        .ul1{
+            width: 180px;
+            text-align: center;
+            margin: 0 auto;
+        }
+        .li1{
+            background-color: grey;
+            width: 180px;
+            height: 40px;
+            /*border: 1px solid #000;*/
+            box-sizing: border-box;
+
+        }
+        .ul2{
+            width: 180px;
+
+        }
+        .li2{
+            display: none;
+            box-sizing: border-box;
+            width: 180px;
+            /*border: 1px solid #000;*/
+            height: 40px;
+            background-color: grey;
+            position: relative;
+            top: 17px;
+            transition: 0.5s;
+        }
+        .ul1 .li1:hover > .ul2 .li2{
+            display: block;
+        }
+        .ul1 .li1 .ul2 .li2:hover{
+            background-color: gold;
+
+        }
+        .ul3{
+            margin-top: -22px;
+        }
+        .li3{
+            box-sizing: border-box;
+            width: 180px;
+            /*border: 1px solid #000;*/
+            height: 40px;
+            background-color: grey;
+            margin-left: 179px;
+            top: -1px;
+            display: none;
+            transition: 0.5s;
+        }
+        .ul1 .li1 .ul2 .li2:hover > .ul3 .li3{
+            display: block;
+        }
+        .ul1 .li1 .ul2 .li2 .ul3 .li3:hover{
+            background-color: gold;
+        }
+    </style>
+</head>
+<body>
+<ul class="ul1">
+    <li class="li1">111
+        <ul class="ul2">
+            <li class="li2">222
+                <ul class="ul3">
+                    <li class="li3">333</li>
+                    <li class="li3">333</li>
+                    <li class="li3">333</li>
+                </ul>
+            </li>
+            <li class="li2">222
+                <ul class="ul3">
+                    <li class="li3">333</li>
+                    <li class="li3">333</li>
+                    <li class="li3">333</li>
+                </ul>
+            </li>
+            <li class="li2">222
+                <ul class="ul3">
+                    <li class="li3">333</li>
+                    <li class="li3">333</li>
+                    <li class="li3">333</li>
+                </ul>
+            </li>
+        </ul>
+    </li>
+</ul>
+</body>
+</html>
