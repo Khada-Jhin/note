@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        *{
+            background-color: rgba(0,0,0,0.1);
+        }
+        /*椭圆 从中心开始渐变.
+        div{
+            height: 800px;
+            background-image: radial-gradient(white , black);
+        } */
+
+        /* 圆形 从中心开始渐变 (circle)
+        div{
+            height: 800px;
+            background-image: radial-gradient(circle, white,black);
+        }*/
+
+        /* (100%)从X轴最右边开始渐变,(50%)从Y轴中间开始渐变,效果其实是上面图形的一半. 
+        div{
+            height: 800px;
+            background-image: radial-gradient(circle at 100% 50%, white,black);
+        } */
+
+        /* 从中心开始渐变50px就结束渐变. 
+        div{
+            height: 800px;
+            background-image: radial-gradient(circle 50px, white,black);   
+        }*/
+
+        /* 像大日晕
+        div{
+            height: 800px;
+            background-image: radial-gradient(circle ,black, white,black);   
+        } */
+
+        /* 小日晕 
+        div{
+            height: 800px;
+            background-image: radial-gradient(circle ,black, white 25%,black);   
+        } */
+
+        /* 水滴入水 
+        div{
+            height: 800px;
+            background-image: repeating-radial-gradient(circle ,white, skyblue 20%);   
+        }*/
+        /* 没软用 
+        div {
+            height: 800px;
+            background-image: linear-gradient(to right bottom, black, white 50%, transparent 50%),
+            linear-gradient(to left bottom, black, white 50%, black 50%);
+        }*/
+
+        /* 迷 
+        div{
+            width: 200px;
+            height: 200px;
+            background-image: repeating-radial-gradient(circle farthest-corner ,white, black 1px,white 2px);   
+        }*/
+        div{
+            height: 800px;
+            background-image: 
+            linear-gradient(to right, rgba(0,0,0,0.2),rgba(0,0,0,0.2) 37px,transparent 0,transparent 74px),
+            linear-gradient(to right, rgba(0,0,0,0.2),rgba(0,0,0,0.2) 29px,transparent 0,transparent 58px),
+            linear-gradient(to right, rgba(0,0,0,0.2),rgba(0,0,0,0.2) 31px,transparent 0,transparent 62px);
+            background-size: 74px,58px,62px ;
+            background-position: 7px 0, 22px 0;
+            background-color: slateblue;
+        }
+    </style>
+</head>
+
+<body>
+    <div></div>
+</body>
+
+</html>
