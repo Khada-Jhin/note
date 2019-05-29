@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>序选择器下</title>
+    <style>
+        /*p:nth-child(odd){*/
+            /*color: red;*/
+        /*}*/
+        /*p:nth-child(even){*/
+            /*color: red;*/
+        /*}*/
+        /*p:nth-of-type(odd){*/
+            /*color: blue;*/
+        /*}*/
+        /*p:nth-of-type(even){*/
+            /*color: red;*/
+        /*}*/
+        p:nth-child(2n+0){
+            color: red;
+        }
+        p:nth-child(2n+1){
+            color: blue;
+        }
+
+    </style>
+    <!--1.nth-child(odd):选中同级别中所有奇数行的标签
+        2.nth-child(even):选中同级别中所有偶数行的标签
+        3.nth-of-type(odd):选中同级别同类型中所有奇数行的标签
+        4.nth-of-type(even):选中同级别同类型中所有偶数行的标签
+        5.nth-child(xn+y):x和y是用户自定义的，而n是一个计数器，从0开始递增-->
+</head>
+<body>
+
+<p>我是项目</p>
+<p>我是项目</p>
+
+<p>我是项目</p>
+<p>我是项目</p>
+
+<p>我是项目</p>
+<p>我是项目</p>
+
+<p>我是项目</p>
+
+
+</body>
+</html>
