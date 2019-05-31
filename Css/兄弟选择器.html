@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>兄弟选择器</title>
+    <style>
+        h1+p{
+            text-decoration: underline;
+        }
+        h2~a{
+            text-decoration: underline;
+        }
+
+    </style>
+    <!--格式：
+        相邻兄弟选择器：期间不能有其他标签插与2者之间，
+        选择器1+选择器2{
+                        属性：值
+                        }-->
+        通用兄弟选择器：
+        选择器1~选择器2{
+                        属性：值
+                            }
+
+</head>
+<body>
+<h1>标题</h1>
+<p>段落</p>
+<p>段落</p>
+<p>段落</p>
+<p>段落</p>
+<h1>标题</h1>
+<p>段落</p>
+<p>段落</p>
+<p>段落</p>
+<p>段落</p>
+<h2>标题</h2>
+<a href="#">段落</a>
+<a href="#">段落</a>
+<a href="#">段落</a>
+<a href="#">段落</a>
+<h2>标题</h2>
+<a href="#">段落</a>
+<a href="#">段落</a>
+<a href="#">段落</a>
+<a href="#">段落</a>
+
+</body>
+</html>
