@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>伪元素选择器</title>
+    <style>
+        div{
+            width: 200px;
+            height: 200px;
+            background: red;
+        }
+        div::before{
+            content: "我是伪类";
+            width: 50px;
+            height: 50px;
+            background: pink;
+            display: block;
+        }
+        div::after{
+            /*指定添加的子元素内容*/
+            content: "我是伪类";
+            /*指定添加的子元素宽度*/
+            width: 100px;
+            /*同上这个是宽度*/
+            height: 50px;
+            /*指定添加的内容背景颜色*/
+            background: pink;
+            /*指定子元素显示模式*/
+            display: block;
+            /*隐藏添加的子元素*/
+            /*visibility: hidden;*/
+        }
+    </style>
+</head>
+<body>
+
+<div>
+    我是文字
+</div>
+
+</body>
+</html>
