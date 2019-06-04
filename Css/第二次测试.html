@@ -1,0 +1,315 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>第二次测试</title>
+    <style>
+        h3{
+            font-size: 30px;
+        }
+        p{
+            font-size: 20px;
+        }
+        a{
+            display: block;
+            width: 54px;
+            height: 54px;
+            background: url(image/mi.png) no-repeat -55px 0;
+            transition: 0.5s;
+        }
+        a:hover{
+
+            background-position: 0 0;
+        }
+    </style>
+</head>
+<body>
+<h3>01.用文字描述如下选择器将选择哪些（个）元素</h3>
+<p>
+    (1). 标签选择器,选中所有div 和 h1 标签. <br>
+    (2).属性选择器,选中有class属性的div标签并且后代元素中还有ID等于abc的标签. <br>
+    (3).伪类选择器,当div hover的时候选中ul标签中的li标签的子元素div. <br>
+    (4).伪类选择器,当鼠标点击时选中body标签. <br>
+    (5).伪类+伪元素选择器,当div hover的时候选中div的after伪元素. <br>
+    (6).伪类选择器,将任何被选中的文本渲染成它的内容样式. <br>
+    (7).伪类选择器,选中一个唯一的页面元素. <br>
+    (8).选中input的兄弟元素ul的兄弟元素的P标签后所有有着和P标签共同父元素的span元素.
+</p>
+<h3>02.分别写出如下几个选择器的优先级</h3>
+<p>
+    (1.)0 0 0 0 <br>
+    (2.)0 0 0 2 <br>
+    (3.)0 0 1 1 <br>
+    (4.)0 0 0 3 <br>
+    (5.)0 2 4 0 <br>
+</p>
+<h3>03.请问最终引入的c.css的完整路径是什么？</h3>
+<p>
+    "//test.example.com/path/c.css"
+</p>
+<h3>04.em,px,rem,vw,vh 分别代表多长？</h3>
+<p>
+    em:相对于父元素的字体大小, 1em默认值16px <br>
+    px:绝对长度单位,1px代表1像素. <br>
+    rem:默认字体大小的尺寸,不会被继承的字体搞混. <br>
+    vw:相对视口宽度 <br>
+    vh:相对视口高度 <br>
+</p>
+<h3>05.显示器的物理分辨率为 1920x1080，操作系统设置的分辨率为 1280x720，网页的放大倍数为 110%，请计算一个 CSS 像素对应多少个显示器物理像素（面积与长度）？</h3>
+<p>
+    2.7225 <br>
+</p>
+<h3>06.写出如下代码显示在浏览器后每个单词的字号</h3>
+<p>
+    h2:300px <br>
+    quick:24px <br>
+    jumps:24px <br>
+    over:36px <br>
+
+    dog:36px <br>
+    sucks:10rem(200px) <br>
+</p>
+<h3>07.字体的 italic 与 obsolete 的区别是？</h3>
+<p>
+    保留
+</p>
+
+<h3>08.写出满足如下条件的选择器</h3>
+<p>
+    1.保留 <br>
+    2.[class^="damiao-"] <br>
+    3.[rel*="nofollow"] <br>
+</p>
+
+<h3>09.链接伪类的几种状态书写的顺序是什么？为什么？</h3>
+<p>
+    a:link:应用于未访问状态的链接 <br>
+    a:visited:应用于已访问的链接 <br>
+    a:hover:应用于鼠标悬停在一个链接上时 <br>
+    a:focus:获得焦点时 <br>
+    a:active: 应用于鼠标点击一个链接时 <br>
+    a: link→visited→hover→focus→active正确顺序
+</p>
+<h3>10.如下 font 属性的值哪一个是书写正确的？</h3>
+<p>
+    font: bold 24px/1.2 serif;
+</p>
+<h3>11.vertical-align 取 middle 时元素如何对齐？</h3>
+<p>
+    保留
+</p>
+<h3>12.什么是 baseline？</h3>
+<p>
+    保留
+</p>
+<h3>13.详述你对盒模型的理解。</h3>
+<p>
+    每个元素都是一个盒子.
+    在HTML中, 基本单位是元素; 而在CSS中, 布局的基本单位是盒, 盒总是矩形的.
+</p>
+<h3>14.如何让一个元素可被 focus？如何去掉其被 focus 时的虚框？</h3>
+<p>
+
+</p>
+<h3>15.如何给css添加注释</h3>
+<p>
+    /*CSS代码*/
+</p>
+<h3>16.指出如下css代码中的错误</h3>
+<p>
+    h1后不需要逗号. <br>
+    rgba后面不需要: 并且值不能为abc <br>
+    font-varient 后面应该用:而不是; ,并且值不能为abc. <br>
+    colr 应该是color ,颜色值不能为5个单位. <br>
+    font 字体应该在最后.
+
+</p>
+<h3>17.元素的高度写百分比在什么情况下【无效】，为什么？在什么情况下【有效】，有效时是以哪个元素的高度为基准值？</h3>
+<p>
+    垂直方向 <br>
+    元素高度auto <br>
+    当元素没有border和padding时 <br>
+    元素从第一个子元素的border-box起，到最后一个元素的border-box止 <br>
+    首尾子元素的margin会超出到父元素的外面 <br>
+    有border或padding时 <br>
+    从第一个子元素的margin-box起，到最后一个子元素的margin-box止 <br>
+    高度为非百分比的长度值时 <br>
+    即为声明的值 <br>
+    高度为百分比时 <br>
+    只有在父元素的高度不直接或间接由此元素撑起来时生效。
+</p>
+<h3>18.解释 box-sizing 可以取哪些值，以及每个值的意义</h3>
+<p>
+    content-box: 盒子宽高等于内容宽高
+    border-box: 盒子宽高等于左边框+左内边距+width+右内边距+右边框
+    padding-box:盒子宽高等于内容和内边距，但是不包括边框和外边距
+</p>
+<h3>19.如下结构中，div 有两个伪元素，分别标出伪元素的位置</h3>
+<p>
+    &lt;div&gt; <br>
+    &lt;before&gt;&lt;/before&gt; <br>
+    &lt;h1&gt;The article&lt;/h1&gt; <br>
+    &lt;p&gt;the quick brown fox&lt;/p&gt; <br>
+    &lt;after&gt;&lt;/after&gt; <br>
+    &lt;/div&gt; <br>
+</p>
+<h3>20.如何在伪元素中插入换行符？如何让这个换行符在页面中生效？</h3>
+<p>
+    ::after{
+    content:"\A";
+    white-space:pre;
+    }
+</p>
+<h3>21.简述 ie7 市场份额比 ie6 低的原因并在网络上找出目前各大浏览器在中国和全球的市场份额</h3>
+<p>
+    市场份额: <br>
+    Chrome :61% <br>
+    firefox:10% <br>
+    ie:12% <br>
+    Opera:1.5% <br>
+    safari:3.99% <br>
+
+</p>
+<h3>22.页面有无 doctype 声明会有什么区别？</h3>
+<p>
+    它就是告诉浏览器，使用哪种规范来解释这个文档中的规范。你知道如果没有它，浏览器在渲染页面的时候会使用怪异模式（各个浏览器在怪异模式下对各个元素渲染时有差异，因此会导致同一个样式在不同浏览器上看到的效果不同）。
+</p>
+<h3>23.有一张高为 100 宽为 50 的图片，内有一个直径为 40 的圆，其做为一个 200x200 的元素的背景图片，background-size 为 contain 和 cover 时，圆的直径分别为多少？</h3>
+<h3>24.写出实现小米网首页 logo 返回主页的动画效果的代码。</h3>
+<a href="https://www.mi.com" title="返回小米首页"></a>
+<h3>25.给出至少 5 种水平垂直居中方案。</h3>
+<p>
+    保留
+</p>
+<h3>26.简述 em 框，内容区，行内框，行框的构成以及其需要注意的问题。</h3>
+<p>
+    保留
+</p>
+<h3>27.如何确定一个行内框的baseline及其最高点和最低点？</h3>
+    保留
+<h3>28.td 元素的 headers 属性是干嘛的？</h3>4
+    保留
+<h3>29.color 这个属性有什么需要注意的地方？</h3>
+<p>
+    color设置的是文本颜色,而不能设置背景颜色,需要设置背景颜色的话属性为background-color,另外color属性不止能设置文本颜色.
+</p>
+<h3>30.如何理解 inline-block 元素？它有什么需要注意的地方？</h3>
+<p>
+    inline-block属性是让一个元素行内块级元素,它可以让一个块级元素不再占据与其高度相同的一整行,也可以让一个行内元素变成可以设置宽高,多个inline-block元素可以同时占据一行,但是每个元素之间会产生一段极小的空隙.
+</p>
+<h3>31.什么是 CSS Sprite？为什么要使用 CSS Sprite？它有哪些优缺点？</h3>
+<p>
+    保留
+</p>
+<h3>32.找出如下代码中的错误</h3>
+<p>
+    伪元素选择器要选择器的最后.
+    visited伪类不能改变字体大小,只能调整颜色
+</p>
+<h3>33.如下内容渲染在【同一行】中，请计算那一行的理论行高</h3>
+<p>
+    保留
+</p>
+<h3>34.vertical-align 取值为 baseline 时在不同情况下分别是如何对齐的？</h3>
+<p>
+    保留
+</p>
+<h3>35.解释常规流与包含块的概念</h3>
+<p>
+    常规流: <br>
+    normal flow <br>
+    网页中的流就是对文档的读取和输出的顺序. 其遵循从左到右, 从上到下的读取, 输出和显示顺序.
+    通常的资料中, 常常称之为文档流, 但是标准中没有这种说法, 只有normal flow一词, 应称之为普通流, 或常规流. <br>
+    在普通流中, 元素按照其在 HTML 中的先后位置至上而下布局, 在这个过程中, 行内元素水平排列, 直到当行被占满然后换行; 块级元素则会被渲染为完整的一个新行. <br>
+    除非另外指定, 否则所有元素默认都是普通流定位, 也可以说, 普通流中元素的位置由该元素在 HTML 文档中的位置决定. <br>
+    <br>
+    包含块:
+    一个元素的尺寸和位置经常受其包含块的影响。大多数情况下，包含块就是这个元素最近的祖先块元素的内容区，但也不是总是这样。 <br>
+
+</p>
+<h3>36.在各种情况下，一个元素的包含块分别是什么</h3>
+<p>
+    确定包含块的过程完全依赖于这个包含块的 position 属性： <br>
+
+    如果 position 属性是 static 或 relative 的话，包含块就是由它的最近的祖先块元素（比如说inline-block, block 或 list-item元素）或格式化上下文(比如说 a table container, flex container, grid container, or the block container itself)的内容区的边缘组成的。
+    <br>
+    如果 position 属性是 absolute 的话，包含块就是由它的最近的 position 的值不是 static （fixed, absolute, relative, or sticky）的祖先元素的内边距区的边缘组成的。
+    <br>
+    如果 position 属性是 fixed 的话，包含块就是由 viewport (in the case of continuous media) or the page area (in  the case of paged media) 组成的。
+    <br>
+    如果 position 属性是 absolute 或 fixed，包含块也可能是由满足以下条件的最近父级元素的内边距区的边缘组成的： <br>
+    A transform or perspective value other than none <br>
+    A will-change value of transform or perspective <br>
+    A filter value other than none or a will-change value of filter (only works on Firefox).
+</p>
+<h3>37.默写与背景相关的属性并说明每个属性的作用和会产生的效果</h3>
+<h3>38.如何实现单方向的盒子阴影？</h3>
+<p>
+    四个方向单方面阴影: <br>
+    上:box-shadow: 0px -5px 5px -5px ; <br>
+    右:box-shadow: 5px 0px 5px -5px ; <br>
+    下:box-shadow: 0px 5px 5px -5px ; <br>
+    左:box-shadow: -5px 0px 5px -5px ;
+</p>
+<h3>39.默写与表格布局相关的 CSS 属性，并说明相关属性的作用</h3>
+<p>
+    保留
+</p>
+<h3>40.visibility:hidden，display:none，opacity:0分别有什么不同？</h3>
+<p>
+    visibility:hidden: 不影响布局,可以理解为隐藏了元素 <br>
+    display:none: 影响布局,相当于直接让元素消失了. <br>
+    opacity:0 保留
+</p>
+<h3>41.当页面中出现表示时间的文字但表意不明确时，比较优雅且富有语义的做法是什么？</h3>
+<p>
+    保留
+</p>
+<h3>42.CSS 中一般为何不使用 cm，mm 等长度单位？</h3>
+<p>
+    在一个高像素密度的设备中，1in 会小于实际的 1 物理英寸。类似地 mm、cm 和 pt 都不是一个绝对的长度单位。
+</p>
+<h3>43.表格布局中各层的层次是？</h3>
+    单元格 <br>
+    行 <br>
+    行组 <br>
+    列 <br>
+    列组 <br>
+    表
+<h3>44.为什么要在文件的最后一行加一个回车？</h3>
+<p>
+    保留
+</p>
+<h3>45用 CSS 画出一个半圆形，分别给出实心与空心的的画法。实心和空心分别给出两种方案。</h3>
+<h3>46.表单元素有哪些伪类选择器？</h3>
+<h3>47.如何禁用 textarea 元素默认的可缩放行为？</h3>
+<p>
+    textarea{
+    resize: none;
+    }
+</p>
+<h3>48.reset与normalize分别是什么，区别是什么，何种场景会使用到？</h3>
+<h3>49.表布局中边框合并的原则是什么？</h3>
+
+<ul>
+    <li>如果某个合并边框的border-style的值为hidden,他会优先于所有其他合并边框,这个位置上的所有边框都将隐藏</li>
+    <li>如果某个合并边框的border-style的值为none,它的优先级最低,其他合并的边框线会填充他.</li>
+    <li>窄边框不敌宽边框</li>
+    <li>颜色上 cell的颜色>row...>row group...>column...>column group...>table</li>
+    <li>边框类型上 double > solid > dashed >  dotted > ridge > outset > groove > inset</li>
+</ul>
+
+<h3>50.如何让背景图片从元素的左下角向上偏移5像素，往右偏移3像素；图片不重复平铺？写出代码。</h3>
+<p>
+    div{
+
+    border: 1px solid #000;
+    padding-bottom: 3px;
+    padding-left: 5px;
+    background-repeat: no-repeat;
+    }
+</p>
+<h3>51.写出创建如下目录结果的命令行脚本（注：有扩展名的为文件，没有扩展名的为文件夹）。</h3>
+<h3>52</h3>
+</body>
+</html>
