@@ -1,0 +1,227 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <!--<link rel="stylesheet" type="text/css" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">-->
+    <style>
+        div.responsive{
+
+            overflow: auto;
+            padding: 20px;
+        }
+        .table{
+            border-collapse: collapse;
+            width: 100%;
+
+        }
+        .table thead{
+            border-bottom: 3px solid grey;
+        }
+        .table th{
+            text-align: left;
+        }
+        .table tr{
+            border-top: 1px solid grey;
+        }
+        .table tr > *{
+            padding-top: 10px ;
+        }
+        .table-dark{
+            background-color: black;
+            color: white;
+        }
+        .table-striped tbody tr:nth-child(odd){
+            background-color: #f2f2f2;
+            color: black;
+        }
+        .table-dark.table-striped tbody tr:nth-child(odd){
+            background-color: #333;
+            color: white;
+        }
+        .table-bordered   tr > * {
+            border: 1px solid grey;
+        }
+        .table-dark.table thead{
+            border-bottom:3px solid darkslategray;
+        }
+        .table-dark.table-bordered tr > *{
+            border: 1px solid darkslategray;
+        }
+        .table-hover.table-striped tbody tr:hover {
+            background-color:gold ;
+        }
+        .table-small tr > * {
+            padding: 5px;
+        }
+        .table-dark.table-striped tbody tr.table-danger{
+            background-color: #eec2c4;
+        }
+        .table-dark.table-striped tbody tr.table-danger:hover{
+            background-color: #ebacae;
+        }
+
+        .nine{
+            border-collapse: collapse;
+        }
+        .nine tr{
+            border: 1px inset #000;
+        }
+        .nine td{
+            width: 50px;
+            height: 50px;
+            border: 1px inset #000;
+            text-align: center;
+        }
+        .nine td:hover{
+            border: 1px solid red;
+        }
+        ul{
+            width: 200px;
+            height: 200px;
+            list-style: none;
+            padding: 0;
+
+        }
+        li{
+            margin-left: -3px;
+            margin-bottom:-3px ;
+            width: 50px;
+            height: 50px;
+            border: 3px solid #000;
+            float: left;
+            position: relative;
+        }
+        li:hover{
+            border:3px solid red;
+            z-index: 100;
+        }
+    </style>
+</head>
+<body>
+<table class="nine">
+    <tr>
+        <td>1</td>
+        <td>2</td>
+        <td>3</td>
+    </tr>
+    <tr>
+        <td>4</td>
+        <td>5</td>
+        <td>6</td>
+    </tr>
+    <tr>
+        <td>7</td>
+        <td>8</td>
+        <td>9</td>
+    </tr>
+</table>
+<ul>
+    <li>1</li>
+    <li>2</li>
+    <li>3</li>
+    <li>4</li>
+    <li>5</li>
+    <li>6</li>
+    <li>7</li>
+    <li>8</li>
+    <li>9</li>
+
+</ul>
+
+<div class="responsive">
+    <table class="table table-dark table-striped table-bordered table-hover table-small">
+        <thead>
+        <tr>
+            <th>#</th>
+            <th>1</th>
+            <th>2</th>
+            <th>3</th>
+            <th>4</th>
+            <th>5</th>
+            <th>6</th>
+            <th>7</th>
+            <th>8</th>
+            <th>9</th>
+        </tr>
+        </thead>
+        <tbody>
+        <tr class="table-danger">
+            <th>Lorem ipsum.</th>
+            <td>Lorem ipsum.</td>
+            <td>Lorem ipsum.</td>
+            <td>Lorem ipsum.</td>
+            <td>Lorem ipsum.</td>
+            <td>Lorem ipsum.</td>
+            <td>Lorem ipsum.</td>
+            <td>Lorem ipsum.</td>
+            <td>Lorem ipsum.</td>
+            <td>Lorem ipsum.</td>
+        </tr>
+        <tr>
+            <th>Lorem ipsum.</th>
+            <td>Lorem ipsum.</td>
+            <td>Lorem ipsum.</td>
+            <td>Lorem ipsum.</td>
+            <td>Lorem ipsum.</td>
+            <td>Lorem ipsum.</td>
+            <td>Lorem ipsum.</td>
+            <td>Lorem ipsum.</td>
+            <td>Lorem ipsum.</td>
+            <td>Lorem ipsum.</td>
+        </tr>
+        <tr>
+            <th>Lorem ipsum.</th>
+            <td>Lorem ipsum.</td>
+            <td>Lorem ipsum.</td>
+            <td>Lorem ipsum.</td>
+            <td>Lorem ipsum.</td>
+            <td>Lorem ipsum.</td>
+            <td>Lorem ipsum.</td>
+            <td>Lorem ipsum.</td>
+            <td>Lorem ipsum.</td>
+            <td>Lorem ipsum.</td>
+        </tr>
+        <tr>
+            <th>Lorem ipsum.</th>
+            <td>Lorem ipsum.</td>
+            <td>Lorem ipsum.</td>
+            <td>Lorem ipsum.</td>
+            <td>Lorem ipsum.</td>
+            <td>Lorem ipsum.</td>
+            <td>Lorem ipsum.</td>
+            <td>Lorem ipsum.</td>
+            <td>Lorem ipsum.</td>
+            <td>Lorem ipsum.</td>
+        </tr>
+        <tr>
+            <th>Lorem ipsum.</th>
+            <td>Lorem ipsum.</td>
+            <td>Lorem ipsum.</td>
+            <td>Lorem ipsum.</td>
+            <td>Lorem ipsum.</td>
+            <td>Lorem ipsum.</td>
+            <td>Lorem ipsum.</td>
+            <td>Lorem ipsum.</td>
+            <td>Lorem ipsum.</td>
+            <td>Lorem ipsum.</td>
+        </tr>
+        <tr>
+            <th>Lorem ipsum.</th>
+            <td>Lorem ipsum.</td>
+            <td>Lorem ipsum.</td>
+            <td>Lorem ipsum.</td>
+            <td>Lorem ipsum.</td>
+            <td>Lorem ipsum.</td>
+            <td>Lorem ipsum.</td>
+            <td>Lorem ipsum.</td>
+            <td>Lorem ipsum.</td>
+            <td>Lorem ipsum.</td>
+        </tr>
+        </tbody>
+    </table>
+
+</div>
+
+</body>
+</html>
