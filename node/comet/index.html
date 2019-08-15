@@ -1,0 +1,37 @@
+<div>
+  <form id="form">
+    <input type="text" id="msg">
+  </form>
+</div>
+
+<script>
+  let form = document.querySelector('#form')
+  form.onsubmit = onsubmit
+  function onsubmit(e) {
+    e.preventDefault()
+    var msg = document.querySelector("#msg").value.trim();
+    if (msg) {
+      get('/send-msg?msg=' + msg);
+    }
+  }
+
+  function get(url) {
+    return new Promise(resolve => {
+      let xhr = new XMLHttpRequest();
+      xhr.open("GET", url);
+      xhr.onload = function() {
+        resolve(xhr.responseText);
+      };
+      xhr.send();
+    });
+  }
+
+  async function main() {
+    for (var i = 0; i < 1000; i++) {
+      let text = await get("/comet");
+      console.log(text);
+    }
+  }
+
+  main();
+</script>
